@@ -430,9 +430,119 @@
     .hero,.card,.day{box-shadow:none}
     .day:hover{transform:none}
   }
+
+  /* Language switcher — intentionally floating so the original layout stays intact */
+  .language-switcher{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    padding:6px;
+    border-radius:999px;
+    background:rgba(255,255,255,.92);
+    border:1px solid rgba(116,87,213,.18);
+    box-shadow:0 8px 24px rgba(76,57,122,.14);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  .language-switcher::before{
+    content:"🌍";
+    margin:0 3px 0 4px;
+    font-size:.95rem;
+  }
+  .language-btn{
+    appearance:none;
+    border:0;
+    background:transparent;
+    color:#625a70;
+    border-radius:999px;
+    padding:7px 10px;
+    font:inherit;
+    font-size:.76rem;
+    font-weight:900;
+    cursor:pointer;
+    transition:transform .16s ease, background .16s ease, color .16s ease;
+  }
+  .language-btn:hover{transform:translateY(-1px);background:#f4efff;color:#6246c8}
+  .language-btn.active{
+    background:linear-gradient(135deg,#7457d5,#a56ce0);
+    color:#fff;
+    box-shadow:0 4px 10px rgba(116,87,213,.22);
+  }
+  html[dir="rtl"] body{direction:rtl}
+  html[dir="rtl"] .language-switcher{
+    right:auto;
+    left:14px;
+    direction:ltr;
+  }
+  html[dir="rtl"] .day{direction:rtl}
+  html[dir="rtl"] .badge{justify-self:start}
+  html[dir="rtl"] .floating{right:auto;left:24px;transform:rotate(-8deg)}
+  html[dir="rtl"] .picnic-time{margin-right:0;margin-left:7px}
+  @media(max-width:760px){
+    .language-switcher{
+      top:8px;
+      right:8px;
+      transform:scale(.92);
+      transform-origin:top right;
+    }
+    html[dir="rtl"] .language-switcher{
+      right:auto;
+      left:8px;
+      transform-origin:top left;
+    }
+    html[dir="rtl"] .floating{right:auto;left:14px}
+  }
+  .language-switcher::after{
+    content:"AI translation may not always be accurate — similar to Google Translate.";
+    position:absolute;
+    top:calc(100% + 8px);
+    right:0;
+    width:max-content;
+    max-width:250px;
+    padding:7px 10px;
+    border-radius:10px;
+    background:#2f3640;
+    color:#fff;
+    font-size:.72rem;
+    font-weight:700;
+    line-height:1.35;
+    box-shadow:0 8px 20px rgba(47,54,64,.18);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-3px);
+    transition:opacity .16s ease, transform .16s ease, visibility .16s ease;
+    pointer-events:none;
+    white-space:normal;
+  }
+  .language-switcher:hover::after,
+  .language-switcher:focus-within::after{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  html[dir="rtl"] .language-switcher::after{
+    right:auto;
+    left:0;
+    text-align:left;
+    direction:ltr;
+  }
+
+  @media print{.language-switcher{display:none}}
+
 </style>
 </head>
 <body>
+
+<div class="language-switcher" role="group" aria-label="Language selector" title="AI translation may not always be accurate — similar to Google Translate.">
+  <button class="language-btn active" type="button" data-lang="en">EN</button>
+  <button class="language-btn" type="button" data-lang="ar">العربية</button>
+  <button class="language-btn" type="button" data-lang="it">Italiano</button>
+</div>
+
 <div class="wrap">
 
   <section class="hero">
@@ -571,6 +681,157 @@
 
     /* Re-check automatically while the page stays open. */
     setInterval(updateCompletedScheduleItems, 30000);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    const translations = {
+      en: {
+        title: "RAK Academy Parents Corner - Week 1",
+        eyebrow: "📣 Parents' Friendly Corner",
+        heroTitle: "Hi Moms &amp; Dads! 👋😊",
+        heroText: "Our little parent-to-parent reminder hub for updates, questions, playdates, helpful info… and hopefully fewer “Wait, was that TODAY?!” moments. 😅💕",
+        banner: "🔴 PRE KG1D — COUNT AS OF 31 AUGUST 2026: At the time of inquiry, there are 22 students — 10 girls and 12 boys. 🔴",
+        introHeading: "💬 What this group is for",
+        intro1: "This little group is our friendly <strong>reminder &amp; announcement corner</strong> 📣✨ — just in case any of us misses something posted on ClassDojo. Feel free to repost important updates here so we can all stay in the loop! 💕",
+        intro2: "Got a question? <strong>Ask away!</strong> 🙋‍♀️ And if you know the answer, feel free to jump in and help. Teamwork makes the school year a little easier! 😄",
+        intro3: "And it doesn’t have to be all school business! 😆 Feel free to arrange <strong>playdates</strong>, share helpful info, or simply connect with other moms and dads. 🛝🧸☕️",
+        disclaimer: "⚠️ <strong>Tiny disclaimer:</strong> This is <strong>not an official school group chat</strong> — just a parent-to-parent space to help each other out.",
+        contactsHeading: "🏫 Official RAK Academy Contacts",
+        whatsappLabel: "📱 Official WhatsApp / Contact Number",
+        emailLabel: "✉️ Official Email Address",
+        tinyNote: "For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜",
+        scheduleHeading: "🗓️ Week 1 Schedule",
+        scheduleRange: "31 August – 4 September 2026",
+        monDow: "Monday", monDate: "31 Aug", monDetail: "Session with parent 👨‍👩‍👧", monBadge: "Parent joins",
+        tueDow: "Tuesday", tueDate: "1 Sep", tueDetail: "Session — optional for parent to leave 👋😊", tueBadge: "Parent optional",
+        wedDow: "Wednesday", wedDate: "2 Sep", wedDetail: "Shorter day, without parents 🎒", wedBadge: "Kids only",
+        thuDow: "Thursday", thuDate: "3 Sep", thuDetail: "Shorter day, without parents 🌈", thuBadge: "Kids only",
+        friDow: "Friday", friDate: "4 Sep", friDetail: "School session, without parents ⭐", friPicnicTime: "PICNIC STARTS AT 10:30 AM", friPicnicLabel: "until 11:30 AM — Class Community Picnic with parents 💕", friBadge: "Picnic day! 🧁",
+        footer: "Here’s to <strong>fewer missed reminders</strong>, more parent teamwork, and lots of happy kiddos! 😂💕🎒"
+      },
+      ar: {
+        title: "ركن أولياء أمور أكاديمية رأس الخيمة - الأسبوع الأول",
+        eyebrow: "📣 الركن الودّي لأولياء الأمور",
+        heroTitle: "مرحباً بالأمهات والآباء! 👋😊",
+        heroText: "مساحتنا الصغيرة بين أولياء الأمور للتذكيرات والتحديثات والأسئلة ومواعيد اللعب والمعلومات المفيدة… ولعلّها تقلّل من لحظات «لحظة… كان هذا اليوم؟!» 😅💕",
+        banner: "🔴 PRE KG1D — العدد حتى 31 أغسطس 2026: وقت الاستفسار، يوجد 22 طالباً — 10 بنات و12 ولداً. 🔴",
+        introHeading: "💬 ما الهدف من هذه المجموعة؟",
+        intro1: "هذه المجموعة الصغيرة هي <strong>ركننا الودّي للتذكيرات والإعلانات</strong> 📣✨ — في حال فات أحدنا شيء نُشر على ClassDojo. لا تترددوا في إعادة نشر التحديثات المهمة هنا حتى نبقى جميعاً على اطلاع! 💕",
+        intro2: "لديكم سؤال؟ <strong>تفضلوا واسألوا!</strong> 🙋‍♀️ وإذا كنتم تعرفون الإجابة، شاركونا وساعدوا. التعاون يجعل العام الدراسي أسهل قليلاً! 😄",
+        intro3: "وليس من الضروري أن تكون كل الأحاديث عن المدرسة! 😆 يمكنكم ترتيب <strong>مواعيد لعب للأطفال</strong>، مشاركة معلومات مفيدة، أو ببساطة التواصل مع الأمهات والآباء الآخرين. 🛝🧸☕️",
+        disclaimer: "⚠️ <strong>تنبيه بسيط:</strong> هذه <strong>ليست مجموعة دردشة رسمية تابعة للمدرسة</strong> — إنما مساحة بين أولياء الأمور لمساعدة بعضنا البعض.",
+        contactsHeading: "🏫 وسائل التواصل الرسمية لأكاديمية رأس الخيمة",
+        whatsappLabel: "📱 واتساب / رقم التواصل الرسمي",
+        emailLabel: "✉️ البريد الإلكتروني الرسمي",
+        tinyNote: "للمسائل المدرسية الرسمية أو التأكيدات أو أي أمر يحتاج إلى رد رسمي، يرجى استخدام بيانات التواصل الرسمية للمدرسة أعلاه. 💜",
+        scheduleHeading: "🗓️ جدول الأسبوع الأول",
+        scheduleRange: "31 أغسطس – 4 سبتمبر 2026",
+        monDow: "الاثنين", monDate: "31 أغسطس", monDetail: "جلسة بحضور ولي الأمر 👨‍👩‍👧", monBadge: "ولي الأمر يحضر",
+        tueDow: "الثلاثاء", tueDate: "1 سبتمبر", tueDetail: "جلسة — يمكن لولي الأمر المغادرة إذا رغب 👋😊", tueBadge: "حضور ولي الأمر اختياري",
+        wedDow: "الأربعاء", wedDate: "2 سبتمبر", wedDetail: "يوم أقصر، من دون أولياء الأمور 🎒", wedBadge: "الأطفال فقط",
+        thuDow: "الخميس", thuDate: "3 سبتمبر", thuDetail: "يوم أقصر، من دون أولياء الأمور 🌈", thuBadge: "الأطفال فقط",
+        friDow: "الجمعة", friDate: "4 سبتمبر", friDetail: "دوام مدرسي من دون أولياء الأمور ⭐", friPicnicTime: "تبدأ النزهة الساعة 10:30 صباحاً", friPicnicLabel: "حتى 11:30 صباحاً — نزهة مجتمعية للصف مع أولياء الأمور 💕", friBadge: "يوم النزهة! 🧁",
+        footer: "نتمنى <strong>تذكيرات أقل تفويتاً</strong>، وتعاوناً أكبر بين أولياء الأمور، وأطفالاً سعداء دائماً! 😂💕🎒"
+      },
+      it: {
+        title: "Angolo Genitori RAK Academy - Settimana 1",
+        eyebrow: "📣 L'angolo amichevole dei genitori",
+        heroTitle: "Ciao mamme e papà! 👋😊",
+        heroText: "Il nostro piccolo spazio tra genitori per promemoria, aggiornamenti, domande, incontri di gioco e informazioni utili… e, speriamo, meno momenti del tipo “Aspetta, era OGGI?!” 😅💕",
+        banner: "🔴 PRE KG1D — NUMERO AL 31 AGOSTO 2026: Al momento della richiesta, ci sono 22 alunni — 10 bambine e 12 bambini. 🔴",
+        introHeading: "💬 A cosa serve questo gruppo",
+        intro1: "Questo piccolo gruppo è il nostro <strong>angolo amichevole per promemoria e annunci</strong> 📣✨ — nel caso qualcuno di noi si perda qualcosa pubblicato su ClassDojo. Sentitevi liberi di ripostare qui gli aggiornamenti importanti, così restiamo tutti informati! 💕",
+        intro2: "Avete una domanda? <strong>Chiedete pure!</strong> 🙋‍♀️ E se conoscete la risposta, intervenite e date una mano. Fare squadra rende l'anno scolastico un po' più semplice! 😄",
+        intro3: "E non deve essere tutto e solo scuola! 😆 Sentitevi liberi di organizzare <strong>incontri di gioco</strong>, condividere informazioni utili o semplicemente conoscere meglio le altre mamme e gli altri papà. 🛝🧸☕️",
+        disclaimer: "⚠️ <strong>Piccola nota:</strong> Questa <strong>non è una chat ufficiale della scuola</strong> — è semplicemente uno spazio tra genitori per aiutarci a vicenda.",
+        contactsHeading: "🏫 Contatti ufficiali RAK Academy",
+        whatsappLabel: "📱 WhatsApp / Numero di contatto ufficiale",
+        emailLabel: "✉️ Indirizzo email ufficiale",
+        tinyNote: "Per questioni scolastiche ufficiali, conferme o qualsiasi cosa richieda una risposta formale, utilizzate i contatti ufficiali della scuola indicati sopra. 💜",
+        scheduleHeading: "🗓️ Programma della Settimana 1",
+        scheduleRange: "31 agosto – 4 settembre 2026",
+        monDow: "Lunedì", monDate: "31 ago", monDetail: "Sessione con un genitore 👨‍👩‍👧", monBadge: "Genitore presente",
+        tueDow: "Martedì", tueDate: "1 set", tueDetail: "Sessione — il genitore può scegliere di andare via 👋😊", tueBadge: "Genitore facoltativo",
+        wedDow: "Mercoledì", wedDate: "2 set", wedDetail: "Giornata più corta, senza genitori 🎒", wedBadge: "Solo bambini",
+        thuDow: "Giovedì", thuDate: "3 set", thuDetail: "Giornata più corta, senza genitori 🌈", thuBadge: "Solo bambini",
+        friDow: "Venerdì", friDate: "4 set", friDetail: "Sessione scolastica, senza genitori ⭐", friPicnicTime: "IL PICNIC INIZIA ALLE 10:30", friPicnicLabel: "fino alle 11:30 — Picnic della comunità di classe con i genitori 💕", friBadge: "Giorno del picnic! 🧁",
+        footer: "A <strong>meno promemoria persi</strong>, più collaborazione tra genitori e tanti bimbi felici! 😂💕🎒"
+      }
+    };
+
+    const nodes = {
+      eyebrow: () => document.querySelector('.eyebrow'),
+      heroTitle: () => document.querySelector('.hero h1'),
+      heroText: () => document.querySelector('.hero p'),
+      banner: () => document.querySelector('.student-banner-track span'),
+      introHeading: () => document.querySelector('.intro h2'),
+      intro1: () => document.querySelectorAll('.intro > p')[0],
+      intro2: () => document.querySelectorAll('.intro > p')[1],
+      intro3: () => document.querySelectorAll('.intro > p')[2],
+      disclaimer: () => document.querySelector('.disclaimer'),
+      contactsHeading: () => document.querySelector('aside.card h2'),
+      whatsappLabel: () => document.querySelector('.contact.whatsapp .label'),
+      emailLabel: () => document.querySelector('.contact.email .label'),
+      tinyNote: () => document.querySelector('.tiny-note'),
+      scheduleHeading: () => document.querySelector('.schedule-head h2'),
+      scheduleRange: () => document.querySelector('.schedule-head span'),
+      monDow: () => document.querySelectorAll('.day')[0].querySelector('.dow'),
+      monDate: () => document.querySelectorAll('.day')[0].querySelector('.date'),
+      monDetail: () => document.querySelectorAll('.day')[0].querySelector('small'),
+      monBadge: () => document.querySelectorAll('.day')[0].querySelector('.badge'),
+      tueDow: () => document.querySelectorAll('.day')[1].querySelector('.dow'),
+      tueDate: () => document.querySelectorAll('.day')[1].querySelector('.date'),
+      tueDetail: () => document.querySelectorAll('.day')[1].querySelector('small'),
+      tueBadge: () => document.querySelectorAll('.day')[1].querySelector('.badge'),
+      wedDow: () => document.querySelectorAll('.day')[2].querySelector('.dow'),
+      wedDate: () => document.querySelectorAll('.day')[2].querySelector('.date'),
+      wedDetail: () => document.querySelectorAll('.day')[2].querySelector('small'),
+      wedBadge: () => document.querySelectorAll('.day')[2].querySelector('.badge'),
+      thuDow: () => document.querySelectorAll('.day')[3].querySelector('.dow'),
+      thuDate: () => document.querySelectorAll('.day')[3].querySelector('.date'),
+      thuDetail: () => document.querySelectorAll('.day')[3].querySelector('small'),
+      thuBadge: () => document.querySelectorAll('.day')[3].querySelector('.badge'),
+      friDow: () => document.querySelectorAll('.day')[4].querySelector('.dow'),
+      friDate: () => document.querySelectorAll('.day')[4].querySelector('.date'),
+      friDetail: () => document.querySelectorAll('.day')[4].querySelector('small'),
+      friPicnicTime: () => document.querySelector('.picnic-time'),
+      friPicnicLabel: () => document.querySelector('.picnic-label'),
+      friBadge: () => document.querySelectorAll('.day')[4].querySelector('.badge'),
+      footer: () => document.querySelector('.footer')
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.title = t.title;
+
+      Object.keys(nodes).forEach(function (key) {
+        const el = nodes[key]();
+        if (el && Object.prototype.hasOwnProperty.call(t, key)) {
+          el.innerHTML = t[key];
+        }
+      });
+
+      document.querySelectorAll('.language-btn').forEach(function (btn) {
+        const active = btn.dataset.lang === lang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+
+      try { localStorage.setItem('parentsCornerLanguage', lang); } catch(e) {}
+    }
+
+    document.querySelectorAll('.language-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () { setLanguage(btn.dataset.lang); });
+    });
+
+    let saved = 'en';
+    try { saved = localStorage.getItem('parentsCornerLanguage') || 'en'; } catch(e) {}
+    setLanguage(saved);
   })();
 </script>
 
