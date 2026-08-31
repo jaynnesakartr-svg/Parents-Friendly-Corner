@@ -389,6 +389,12 @@
   }
 
   @media(max-width:760px){
+    /* Longer marquee cycle on narrow screens so the full announcement
+       has enough time to pass before the animation restarts. */
+    .student-banner-track{
+      animation-duration:40s;
+    }
+
     body{padding:16px 12px 36px}
     .hero{padding:27px 22px 25px}
     .floating{font-size:2.6rem;right:14px;bottom:12px}
