@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RAK Academy Parents Corner - Week 1</title>
+<style>
+  :root{
+    --ink:#2f3640;
+    --muted:#68707c;
+    --purple:#7457d5;
+    --purple-soft:#f1ecff;
+    --pink:#ff7ca8;
+    --pink-soft:#fff0f5;
+    --yellow:#ffd86b;
+    --yellow-soft:#fff8df;
+    --green:#39b980;
+    --green-soft:#eafaf3;
+    --blue:#56a8e8;
+    --blue-soft:#ecf7ff;
+    --card:#ffffff;
+    --bg:#fbf8ff;
+    --border:#ece7f4;
+    --shadow:0 12px 30px rgba(76,57,122,.10);
+  }
+
+  *{box-sizing:border-box}
+
+  body{
+    margin:0;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    background:
+      radial-gradient(circle at 10% 10%, #ffe7f0 0 7%, transparent 7.5%),
+      radial-gradient(circle at 90% 15%, #e8dcff 0 8%, transparent 8.5%),
+      radial-gradient(circle at 85% 90%, #ddf7ee 0 9%, transparent 9.5%),
+      var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    padding:28px 16px 48px;
+  }
+
+  .wrap{
+    max-width:980px;
+    margin:0 auto;
+  }
+
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#7c5ce5 0%,#a56ce0 52%,#ff89ad 100%);
+    color:white;
+    border-radius:28px;
+    padding:34px 30px 30px;
+    box-shadow:0 20px 45px rgba(112,77,183,.22);
+  }
+
+  .hero::before,
+  .hero::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.13);
+  }
+  .hero::before{width:180px;height:180px;right:-55px;top:-70px}
+  .hero::after{width:100px;height:100px;left:-30px;bottom:-35px}
+
+  .eyebrow{
+    display:inline-block;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.26);
+    padding:7px 12px;
+    border-radius:999px;
+    font-size:.82rem;
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+
+  h1{
+    margin:0;
+    font-size:clamp(2rem,5vw,3.4rem);
+    line-height:1.05;
+    letter-spacing:-.04em;
+  }
+
+  .hero p{
+    margin:12px 0 0;
+    max-width:720px;
+    font-size:1.05rem;
+    color:rgba(255,255,255,.93);
+  }
+
+  .floating{
+    position:absolute;
+    right:24px;
+    bottom:18px;
+    font-size:3.4rem;
+    transform:rotate(8deg);
+    filter:drop-shadow(0 7px 8px rgba(0,0,0,.15));
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:18px;
+    margin-top:18px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    padding:24px;
+  }
+
+  .card h2{
+    margin:0 0 12px;
+    font-size:1.25rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .intro p{margin:0 0 13px}
+  .intro p:last-child{margin-bottom:0}
+
+  .disclaimer{
+    margin-top:16px;
+    background:var(--yellow-soft);
+    border:1px dashed #e6b83f;
+    border-radius:16px;
+    padding:13px 14px;
+    font-size:.94rem;
+  }
+
+  .contact-box{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .contact{
+    border-radius:18px;
+    padding:14px 15px;
+    border:1px solid var(--border);
+  }
+
+  .contact.whatsapp{background:var(--green-soft)}
+  .contact.email{background:var(--blue-soft)}
+
+  .label{
+    font-size:.76rem;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    font-weight:900;
+    color:var(--muted);
+  }
+
+  .value{
+    margin-top:3px;
+    font-size:1.03rem;
+    font-weight:800;
+    word-break:break-word;
+  }
+
+  .tiny-note{
+    margin-top:13px;
+    color:var(--muted);
+    font-size:.88rem;
+  }
+
+  .schedule{
+    margin-top:20px;
+  }
+
+  .schedule-head{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    align-items:flex-end;
+    margin-bottom:12px;
+  }
+
+  .schedule-head h2{
+    margin:0;
+    font-size:1.55rem;
+  }
+
+  .schedule-head span{
+    color:var(--muted);
+    font-size:.9rem;
+  }
+
+  .days{
+    display:grid;
+    gap:12px;
+  }
+
+  .day{
+    display:grid;
+    grid-template-columns:110px 1fr auto;
+    align-items:center;
+    gap:16px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:16px 18px;
+    box-shadow:0 8px 22px rgba(65,55,92,.07);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+
+  .day:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(65,55,92,.12);
+  }
+
+  .datebox{
+    text-align:center;
+    border-radius:16px;
+    padding:10px 8px;
+    font-weight:900;
+  }
+
+  .mon{background:var(--purple-soft);color:#6246c8}
+  .tue{background:var(--pink-soft);color:#d85587}
+  .wed{background:var(--blue-soft);color:#317fb8}
+  .thu{background:var(--green-soft);color:#278760}
+  .fri{background:var(--yellow-soft);color:#a97800}
+
+  .datebox .dow{
+    font-size:.77rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+
+  .datebox .date{
+    font-size:1.5rem;
+    line-height:1.1;
+  }
+
+  .details strong{
+    display:block;
+    font-size:1.03rem;
+  }
+
+  .details small{
+    color:var(--muted);
+    display:block;
+    margin-top:3px;
+  }
+
+  .badge{
+    justify-self:end;
+    white-space:nowrap;
+    padding:7px 10px;
+    border-radius:999px;
+    font-size:.77rem;
+    font-weight:900;
+    background:#f5f3f8;
+    color:#645e6d;
+  }
+
+  .picnic{
+    margin-top:10px;
+    padding:14px 16px;
+    border-radius:14px;
+    background:#fff0b8;
+    border:3px solid #d99800;
+    font-weight:800;
+    box-shadow:0 5px 14px rgba(169,120,0,.18);
+  }
+
+  .picnic-time{
+    display:inline-block;
+    margin-right:7px;
+    padding:5px 10px;
+    border-radius:9px;
+    background:#8b4d00;
+    color:#fff;
+    font-size:1.12rem;
+    font-weight:950;
+    letter-spacing:.01em;
+  }
+
+  .picnic-label{
+    font-size:1.04rem;
+    font-weight:900;
+    color:#684000;
+  }
+
+  .footer{
+    text-align:center;
+    margin-top:22px;
+    color:#6c6576;
+    font-size:.95rem;
+  }
+
+  .footer strong{color:#7a57d1}
+
+
+  /* Automatically mark a schedule item complete once its END time has passed. */
+  .day.completed .datebox,
+  .day.completed .details,
+  .day.completed .badge{
+    text-decoration:line-through;
+    text-decoration-thickness:2px;
+    opacity:.52;
+  }
+
+  @media(max-width:760px){
+    body{padding:16px 12px 36px}
+    .hero{padding:27px 22px 25px}
+    .floating{font-size:2.6rem;right:14px;bottom:12px}
+    .grid{grid-template-columns:1fr}
+    .day{
+      grid-template-columns:82px 1fr;
+      gap:12px;
+    }
+    .badge{
+      grid-column:2;
+      justify-self:start;
+      margin-top:-4px;
+    }
+    .schedule-head{
+      align-items:flex-start;
+      flex-direction:column;
+      gap:4px;
+    }
+  }
+
+  @media print{
+    body{background:white;padding:0}
+    .hero,.card,.day{box-shadow:none}
+    .day:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">📣 Parents' Friendly Corner</div>
+    <h1>Hi Moms &amp; Dads! 👋😊</h1>
+    <p>Our little parent-to-parent reminder hub for updates, questions, playdates, helpful info… and hopefully fewer “Wait, was that TODAY?!” moments. 😅💕</p>
+    <div class="floating">🎒✨</div>
+  </section>
+
+  <div class="grid">
+    <section class="card intro">
+      <h2>💬 What this group is for</h2>
+      <p>This little group is our friendly <strong>reminder &amp; announcement corner</strong> 📣✨ — just in case any of us misses something posted on ClassDojo. Feel free to repost important updates here so we can all stay in the loop! 💕</p>
+      <p>Got a question? <strong>Ask away!</strong> 🙋‍♀️ And if you know the answer, feel free to jump in and help. Teamwork makes the school year a little easier! 😄</p>
+      <p>And it doesn’t have to be all school business! 😆 Feel free to arrange <strong>playdates</strong>, share helpful info, or simply connect with other moms and dads. 🛝🧸☕️</p>
+
+      <div class="disclaimer">
+        ⚠️ <strong>Tiny disclaimer:</strong> This is <strong>not an official school group chat</strong> — just a parent-to-parent space to help each other out.
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2>🏫 Official RAK Academy Contacts</h2>
+      <div class="contact-box">
+        <div class="contact whatsapp">
+          <div class="label">📱 Official WhatsApp / Contact Number</div>
+          <div class="value">+971 800 7252</div>
+        </div>
+        <div class="contact email">
+          <div class="label">✉️ Official Email Address</div>
+          <div class="value">admission@rakacademy.org</div>
+        </div>
+      </div>
+      <div class="tiny-note">For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜</div>
+    </aside>
+  </div>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <h2>🗓️ Week 1 Schedule</h2>
+      <span>31 August – 4 September 2026</span>
+    </div>
+
+    <div class="days">
+      <article class="day" data-end="2026-08-31T11:00:00">
+        <div class="datebox mon">
+          <div class="dow">Monday</div>
+          <div class="date">31 Aug</div>
+        </div>
+        <div class="details">
+          <strong>9:00 AM – 11:00 AM</strong>
+          <small>Session with parent 👨‍👩‍👧</small>
+        </div>
+        <div class="badge">Parent joins</div>
+      </article>
+
+      <article class="day" data-end="2026-09-01T11:00:00">
+        <div class="datebox tue">
+          <div class="dow">Tuesday</div>
+          <div class="date">1 Sep</div>
+        </div>
+        <div class="details">
+          <strong>9:00 AM – 11:00 AM</strong>
+          <small>Session — optional for parent to leave 👋😊</small>
+        </div>
+        <div class="badge">Parent optional</div>
+      </article>
+
+      <article class="day" data-end="2026-09-02T14:00:00">
+        <div class="datebox wed">
+          <div class="dow">Wednesday</div>
+          <div class="date">2 Sep</div>
+        </div>
+        <div class="details">
+          <strong>9:00 AM – 2:00 PM</strong>
+          <small>Shorter day, without parents 🎒</small>
+        </div>
+        <div class="badge">Kids only</div>
+      </article>
+
+      <article class="day" data-end="2026-09-03T14:00:00">
+        <div class="datebox thu">
+          <div class="dow">Thursday</div>
+          <div class="date">3 Sep</div>
+        </div>
+        <div class="details">
+          <strong>9:00 AM – 2:00 PM</strong>
+          <small>Shorter day, without parents 🌈</small>
+        </div>
+        <div class="badge">Kids only</div>
+      </article>
+
+      <article class="day" data-end="2026-09-04T11:30:00">
+        <div class="datebox fri">
+          <div class="dow">Friday</div>
+          <div class="date">4 Sep</div>
+        </div>
+        <div class="details">
+          <strong>7:30 AM – 10:30 AM</strong>
+          <small>School session, without parents ⭐</small>
+          <div class="picnic">🧺 <span class="picnic-time">PICNIC STARTS AT 10:30 AM</span><span class="picnic-label">until 11:30 AM — Class Community Picnic with parents 💕</span></div>
+        </div>
+        <div class="badge">Picnic day! 🧁</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="footer">
+    Here’s to <strong>fewer missed reminders</strong>, more parent teamwork, and lots of happy kiddos! 😂💕🎒
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    function updateCompletedScheduleItems() {
+      const now = new Date();
+
+      document.querySelectorAll('.day[data-end]').forEach(function (day) {
+        const endTime = new Date(day.dataset.end);
+        day.classList.toggle('completed', now >= endTime);
+      });
+    }
+
+    updateCompletedScheduleItems();
+
+    /* Re-check automatically while the page stays open. */
+    setInterval(updateCompletedScheduleItems, 30000);
+  })();
+</script>
+
+</body>
+</html>
