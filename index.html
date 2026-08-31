@@ -147,8 +147,45 @@
     border:1px solid var(--border);
   }
 
+
+  .contact-box a.contact{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .contact-box a.contact:hover{
+    text-decoration:none;
+  }
+
   .contact.whatsapp{background:var(--green-soft)}
   .contact.email{background:var(--blue-soft)}
+
+  .email-contact{cursor:default}
+  .email-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:10px;
+  }
+  .email-actions a{
+    display:inline-block;
+    padding:6px 9px;
+    border-radius:9px;
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(49,127,184,.20);
+    color:#317fb8;
+    text-decoration:none;
+    font-size:.76rem;
+    font-weight:800;
+    line-height:1.2;
+  }
+  .email-actions a:hover{
+    background:#fff;
+    text-decoration:none;
+  }
+
 
   .label{
     font-size:.76rem;
@@ -362,13 +399,18 @@
     <aside class="card">
       <h2>🏫 Official RAK Academy Contacts</h2>
       <div class="contact-box">
-        <div class="contact whatsapp">
+        <a class="contact whatsapp" href="https://wa.me/9718007252" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp chat with RAK Academy">
           <div class="label">📱 Official WhatsApp / Contact Number</div>
           <div class="value">+971 800 7252</div>
-        </div>
-        <div class="contact email">
+        </a>
+        <div class="contact email email-contact" role="button" tabindex="0" aria-label="Choose an email service for RAK Academy Admissions">
           <div class="label">✉️ Official Email Address</div>
           <div class="value">admission@rakacademy.org</div>
+          <div class="email-actions" aria-label="Email service choices">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=admission%40rakacademy.org" target="_blank" rel="noopener noreferrer">Gmail</a>
+            <a href="https://outlook.office.com/mail/deeplink/compose?to=admission%40rakacademy.org" target="_blank" rel="noopener noreferrer">Microsoft Outlook</a>
+            <a href="https://compose.mail.yahoo.com/?to=admission%40rakacademy.org" target="_blank" rel="noopener noreferrer">Yahoo Mail</a>
+          </div>
         </div>
       </div>
       <div class="tiny-note">For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜</div>
