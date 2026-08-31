@@ -389,10 +389,20 @@
   }
 
   @media(max-width:760px){
-    /* Longer marquee cycle on narrow screens so the full announcement
-       has enough time to pass before the animation restarts. */
+    /* Mobile banner fix: scroll the ENTIRE announcement fully off-screen
+       before restarting. Desktop banner behavior remains unchanged. */
     .student-banner-track{
-      animation-duration:40s;
+      min-width:0;
+      width:max-content;
+      animation:studentBannerMoveMobile 28s linear infinite;
+    }
+    .student-banner-track span{
+      padding-left:0;
+    }
+
+    @keyframes studentBannerMoveMobile{
+      from{transform:translateX(100vw)}
+      to{transform:translateX(-100%)}
     }
 
     body{padding:16px 12px 36px}
