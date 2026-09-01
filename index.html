@@ -208,6 +208,114 @@
     font-size:.88rem;
   }
 
+  .update-stamp{
+    margin-top:12px;
+    display:flex;
+    justify-content:flex-end;
+  }
+
+  .update-stamp span{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 11px;
+    border-radius:999px;
+    background:rgba(255,255,255,.88);
+    border:1px solid var(--border);
+    color:var(--muted);
+    box-shadow:0 6px 18px rgba(76,57,122,.08);
+    font-size:.78rem;
+    font-weight:800;
+  }
+
+  .faq-section{
+    margin-top:20px;
+  }
+
+  .faq-head{
+    margin-bottom:12px;
+  }
+
+  .faq-head h2{
+    margin:0;
+    font-size:1.55rem;
+  }
+
+  .faq-head p{
+    margin:4px 0 0;
+    color:var(--muted);
+    font-size:.92rem;
+  }
+
+  .faq-list{
+    display:grid;
+    gap:10px;
+  }
+
+  .faq-item{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:0 8px 22px rgba(65,55,92,.07);
+    overflow:hidden;
+  }
+
+  .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 18px;
+    font-weight:900;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+  }
+
+  .faq-item summary::-webkit-details-marker{display:none}
+
+  .faq-item summary::after{
+    content:"+";
+    flex:0 0 auto;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--purple-soft);
+    color:#6246c8;
+    font-size:1.15rem;
+    line-height:1;
+    transition:transform .18s ease;
+  }
+
+  .faq-item[open] summary::after{
+    content:"−";
+    transform:rotate(180deg);
+  }
+
+  .faq-answer{
+    padding:0 18px 17px;
+    color:#4e5560;
+  }
+
+  .faq-answer p{
+    margin:0;
+  }
+
+  .faq-highlight{
+    display:block;
+    margin-top:8px;
+    padding:11px 13px;
+    border-radius:13px;
+    background:var(--purple-soft);
+    color:#5239aa;
+    font-weight:800;
+  }
+
+  html[dir="rtl"] .update-stamp{justify-content:flex-start}
+  html[dir="rtl"] .faq-item summary,
+  html[dir="rtl"] .faq-answer{text-align:right}
+
   .schedule{
     margin-top:20px;
   }
@@ -563,6 +671,10 @@
     <div class="student-banner-track"><span>🔴 PRE KG1D — COUNT AS OF 31 AUGUST 2026: At the time of inquiry, there are 22 students — 10 girls and 12 boys. 🔴</span></div>
   </div>
 
+  <div class="update-stamp" aria-label="Page update timestamp">
+    <span>🕒 Last updated: 1 September 2026 · 7:32 PM (UAE)</span>
+  </div>
+
 
   <div class="grid">
     <section class="card intro">
@@ -596,6 +708,30 @@
       <div class="tiny-note">For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜</div>
     </aside>
   </div>
+
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="faq-head">
+      <h2 id="faq-heading">❓ Parent FAQs</h2>
+      <p>Tap a question to see the answer. 😊</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>👧👦 How many children are in PRE KG1D?</summary>
+        <div class="faq-answer">
+          <p>As of 31 August 2026, PRE KG1D has <strong>22 students</strong> in total: <strong>10 girls and 12 boys</strong>.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>🏃 When is PE, and will there be a class timetable?</summary>
+        <div class="faq-answer">
+          <p>The class timetable is still being finalised. Once it is ready, it will be shared with parents.</p>
+          <span class="faq-highlight">The timetable will cover the children’s daily lessons and activities, including phonics, literacy, maths, Arabic, PE, library visits and more. PE day and time are also being finalised. On PE days, children will come to school in their PE kit and trainers. 😊</span>
+        </div>
+      </details>
+    </div>
+  </section>
 
   <section class="schedule">
     <div class="schedule-head">
@@ -711,6 +847,14 @@
         whatsappLabel: "📱 Official WhatsApp / Contact Number",
         emailLabel: "✉️ Official Email Address",
         tinyNote: "For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜",
+        updateStamp: "🕒 Last updated: 1 September 2026 · 7:32 PM (UAE)",
+        faqHeading: "❓ Parent FAQs",
+        faqIntro: "Tap a question to see the answer. 😊",
+        faqQ1: "👧👦 How many children are in PRE KG1D?",
+        faqA1: "As of 31 August 2026, PRE KG1D has <strong>22 students</strong> in total: <strong>10 girls and 12 boys</strong>.",
+        faqQ2: "🏃 When is PE, and will there be a class timetable?",
+        faqA2: "The class timetable is still being finalised. Once it is ready, it will be shared with parents.",
+        faqA2Highlight: "The timetable will cover the children’s daily lessons and activities, including phonics, literacy, maths, Arabic, PE, library visits and more. PE day and time are also being finalised. On PE days, children will come to school in their PE kit and trainers. 😊",
         scheduleHeading: "🗓️ Week 1 Schedule",
         scheduleRange: "31 August – 4 September 2026",
         monDow: "Monday", monDate: "31 Aug", monDetail: "Session with parent 👨‍👩‍👧", monBadge: "Parent joins",
@@ -736,6 +880,14 @@
         whatsappLabel: "📱 واتساب / رقم التواصل الرسمي",
         emailLabel: "✉️ البريد الإلكتروني الرسمي",
         tinyNote: "للمسائل المدرسية الرسمية أو التأكيدات أو أي أمر يحتاج إلى رد رسمي، يرجى استخدام بيانات التواصل الرسمية للمدرسة أعلاه. 💜",
+        updateStamp: "🕒 آخر تحديث: 1 سبتمبر 2026 · 7:32 مساءً (الإمارات)",
+        faqHeading: "❓ أسئلة شائعة للوالدين",
+        faqIntro: "اضغطوا على السؤال لإظهار الإجابة. 😊",
+        faqQ1: "👧👦 كم عدد الأطفال في صف PRE KG1D؟",
+        faqA1: "حتى 31 أغسطس 2026، يضم صف PRE KG1D <strong>22 طالباً</strong>: <strong>10 بنات و12 ولداً</strong>.",
+        faqQ2: "🏃 متى حصة الرياضة؟ وهل سيكون هناك جدول للحصص؟",
+        faqA2: "لا يزال جدول الحصص قيد الإعداد. وبمجرد اعتماده، سيتم مشاركته مع أولياء الأمور.",
+        faqA2Highlight: "سيتضمن الجدول الدروس والأنشطة اليومية للأطفال، مثل الصوتيات والقراءة والكتابة والرياضيات والعربية والرياضة وزيارات المكتبة وغيرها. كما لا يزال يوم ووقت حصة الرياضة قيد التحديد. وفي يوم الرياضة، سيحضر الأطفال بملابس الرياضة والحذاء الرياضي. 😊",
         scheduleHeading: "🗓️ جدول الأسبوع الأول",
         scheduleRange: "31 أغسطس – 4 سبتمبر 2026",
         monDow: "الاثنين", monDate: "31 أغسطس", monDetail: "جلسة بحضور ولي الأمر 👨‍👩‍👧", monBadge: "ولي الأمر يحضر",
@@ -761,6 +913,14 @@
         whatsappLabel: "📱 WhatsApp / Numero di contatto ufficiale",
         emailLabel: "✉️ Indirizzo email ufficiale",
         tinyNote: "Per questioni scolastiche ufficiali, conferme o qualsiasi cosa richieda una risposta formale, utilizzate i contatti ufficiali della scuola indicati sopra. 💜",
+        updateStamp: "🕒 Ultimo aggiornamento: 1 settembre 2026 · 19:32 (EAU)",
+        faqHeading: "❓ Domande frequenti dei genitori",
+        faqIntro: "Tocca una domanda per vedere la risposta. 😊",
+        faqQ1: "👧👦 Quanti bambini ci sono nella PRE KG1D?",
+        faqA1: "Al 31 agosto 2026, la PRE KG1D conta <strong>22 alunni</strong> in totale: <strong>10 bambine e 12 bambini</strong>.",
+        faqQ2: "🏃 Quando c’è educazione fisica? Ci sarà un orario delle lezioni?",
+        faqA2: "L’orario della classe è ancora in fase di definizione. Appena sarà pronto, verrà condiviso con i genitori.",
+        faqA2Highlight: "L’orario includerà le lezioni e le attività quotidiane dei bambini, come fonetica, alfabetizzazione, matematica, arabo, educazione fisica, visite in biblioteca e altro. Anche il giorno e l’orario di educazione fisica sono ancora in fase di definizione. Nei giorni di PE, i bambini verranno a scuola con la divisa da PE e le scarpe da ginnastica. 😊",
         scheduleHeading: "🗓️ Programma della Settimana 1",
         scheduleRange: "31 agosto – 4 settembre 2026",
         monDow: "Lunedì", monDate: "31 ago", monDetail: "Sessione con un genitore 👨‍👩‍👧", monBadge: "Genitore presente",
@@ -786,6 +946,14 @@
       whatsappLabel: () => document.querySelector('.contact.whatsapp .label'),
       emailLabel: () => document.querySelector('.contact.email .label'),
       tinyNote: () => document.querySelector('.tiny-note'),
+      updateStamp: () => document.querySelector('.update-stamp span'),
+      faqHeading: () => document.querySelector('.faq-head h2'),
+      faqIntro: () => document.querySelector('.faq-head p'),
+      faqQ1: () => document.querySelectorAll('.faq-item summary')[0],
+      faqA1: () => document.querySelectorAll('.faq-answer p')[0],
+      faqQ2: () => document.querySelectorAll('.faq-item summary')[1],
+      faqA2: () => document.querySelectorAll('.faq-answer p')[1],
+      faqA2Highlight: () => document.querySelector('.faq-highlight'),
       scheduleHeading: () => document.querySelector('.schedule-head h2'),
       scheduleRange: () => document.querySelector('.schedule-head span'),
       monDow: () => document.querySelectorAll('.day')[0].querySelector('.dow'),
