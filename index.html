@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>RAK Academy Parents Corner - Week 1</title>
-<style>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=kh9FZXzmpwF12u7Kios-FcdFklltBEW7vEeaQECnIUnaXbQQaF7T2JvrPlXVJpw162nUQ8wV2C75PiKCQ_Jk-FIZTcM7ck-8Fntlhxjaw0kKC0kiyo9ZQn2O4mVsqVARR-W8wliryOuJZ9KdwBWNkUVN5W7Hu7ZSCq4RkOQYSauq_yKAICkRNdCR_CV-RDb5ftOpPbPApQCwYgmXdVedQWAMbj_nTGsqdMdrqxBKOH0ZHgP8XCwSlKu5N-YOhdVf7XoyvRrsWL5vDUEpcgYpULuhDwu_ukValeWbFhNwrXrC5Y3E6cPxW7LvLFsfysPy_I2OW2RKMTpHoLSwF7IKrgeqbHZU8WhHR4lNy-S-gvIXore3QzIlZGFOQfbG06af" charset="UTF-8"></script><style>
   :root{
     --ink:#2f3640;
     --muted:#68707c;
@@ -226,6 +226,106 @@
     box-shadow:0 6px 18px rgba(76,57,122,.08);
     font-size:.78rem;
     font-weight:800;
+  }
+
+  /* Helpful links — added above FAQs without changing the existing page layout */
+  .resources-section{
+    margin-top:20px;
+  }
+
+  .resources-card{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffffff 0%,#fbf9ff 58%,#f4f8ff 100%);
+    border:1px solid var(--border);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+
+  .resources-card::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    right:-70px;
+    top:-75px;
+    border-radius:50%;
+    background:rgba(116,87,213,.08);
+    pointer-events:none;
+  }
+
+  .resources-head{
+    position:relative;
+    z-index:1;
+    margin-bottom:14px;
+  }
+
+  .resources-head h2{
+    margin:0;
+    font-size:1.35rem;
+  }
+
+  .resources-head p{
+    margin:4px 0 0;
+    color:var(--muted);
+    font-size:.92rem;
+  }
+
+  .resource-links{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .resource-link{
+    display:flex;
+    gap:13px;
+    align-items:flex-start;
+    padding:16px;
+    border-radius:18px;
+    border:1px solid var(--border);
+    text-decoration:none;
+    color:inherit;
+    background:#fff;
+    box-shadow:0 7px 18px rgba(65,55,92,.06);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+
+  .resource-link:first-child{background:linear-gradient(135deg,#fff8df,#fffdf5)}
+  .resource-link:last-child{background:linear-gradient(135deg,#ecf7ff,#f7fbff)}
+
+  .resource-link:hover{
+    transform:translateY(-2px);
+    box-shadow:0 11px 25px rgba(65,55,92,.11);
+    border-color:rgba(116,87,213,.24);
+    text-decoration:none;
+  }
+
+  .resource-icon{
+    flex:0 0 auto;
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:rgba(255,255,255,.82);
+    font-size:1.45rem;
+    box-shadow:0 4px 12px rgba(65,55,92,.07);
+  }
+
+  .resource-content{min-width:0}
+  .resource-title{font-weight:900;font-size:1.02rem;line-height:1.3}
+  .resource-meta{margin-top:4px;color:#735cb4;font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.035em}
+  .resource-desc{margin-top:6px;color:var(--muted);font-size:.88rem;line-height:1.45}
+  .resource-action{margin-top:8px;color:#6246c8;font-size:.82rem;font-weight:900}
+
+  html[dir="rtl"] .resource-link{text-align:right}
+
+  @media(max-width:760px){
+    .resource-links{grid-template-columns:1fr}
   }
 
   .faq-section{
@@ -750,11 +850,11 @@
   </section>
 
   <div class="student-banner" role="status" aria-label="Next week schedule announcement">
-    <div class="student-banner-track"><span>🔴 NEXT WEEK SCHEDULE — FULL DAY / FULL TIME SCHOOL HOURS 🔴</span></div>
+    <div class="student-banner-track"><span>🔴 Return of the borrowed library book on September 14, 2026. 🔴</span></div>
   </div>
 
   <div class="update-stamp" aria-label="Page update timestamp">
-    <span>🕒 Last updated: 2 September 2026 · 8:56 PM (UAE)</span>
+    <span>🕒 Last updated: 13 September 2026 · 3:30 PM (UAE)</span>
   </div>
 
 
@@ -790,6 +890,35 @@
       <div class="tiny-note">For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜</div>
     </aside>
   </div>
+
+  <section class="resources-section" aria-labelledby="resources-heading">
+    <div class="resources-card">
+      <div class="resources-head">
+        <h2 id="resources-heading">🔗 Helpful Links &amp; Learning Resources</h2>
+        <p>Quick access to useful class learning updates and official school dates.</p>
+      </div>
+      <div class="resource-links">
+        <a class="resource-link padlet-link" href="https://padlet.com/sherizelourens/what-kg1-are-learning-about-s0237yx4vk17irzic66r" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon" aria-hidden="true">🎨</div>
+          <div class="resource-content">
+            <div class="resource-title">What KG1 Are Learning About — Padlet</div>
+            <div class="resource-meta">Released: 11 September 2026</div>
+            <div class="resource-desc">Explore the latest KG1 learning topics and shared learning materials.</div>
+            <div class="resource-action">Open Padlet ↗</div>
+          </div>
+        </a>
+        <a class="resource-link calendar-link" href="https://www.rakacademy.org/academic-calendar/" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon" aria-hidden="true">📅</div>
+          <div class="resource-content">
+            <div class="resource-title">Academic Calendar 2026–2027</div>
+            <div class="resource-meta">Official RAK Academy calendar</div>
+            <div class="resource-desc">Check key school dates, holidays and academic-year information from RAK Academy.</div>
+            <div class="resource-action">View Academic Calendar ↗</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section class="faq-section" aria-labelledby="faq-heading">
     <div class="faq-head">
@@ -905,40 +1034,79 @@
     </div>
   </details>
 
-  <section class="schedule week2-schedule">
-    <div class="schedule-head">
-      <h2>🗓️ Week 2 Schedule</h2>
-      <span>7–11 September 2026</span>
-    </div>
+  <details class="schedule schedule-collapsible week2-schedule" data-auto-close="2026-09-11T23:30:00+04:00" open>
+    <summary>
+      <div class="schedule-head">
+        <h2>🗓️ Week 2 Schedule</h2>
+        <span>7–11 September 2026</span>
+      </div>
+    </summary>
     <div class="week2-note">✅ Full-time / full-day school schedule</div>
     <div class="days">
-      <article class="day">
+      <article class="day" data-end="2026-09-07T14:25:00+04:00">
         <div class="datebox mon"><div class="dow">Monday</div><div class="date">7 Sep</div></div>
         <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
         <div class="badge">Full day</div>
       </article>
-      <article class="day">
+      <article class="day" data-end="2026-09-08T14:25:00+04:00">
         <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">8 Sep</div></div>
         <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
         <div class="badge">Full day</div>
       </article>
-      <article class="day">
+      <article class="day" data-end="2026-09-09T14:25:00+04:00">
         <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">9 Sep</div></div>
         <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
         <div class="badge">Full day</div>
       </article>
-      <article class="day">
+      <article class="day" data-end="2026-09-10T14:25:00+04:00">
         <div class="datebox thu"><div class="dow">Thursday</div><div class="date">10 Sep</div></div>
         <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
         <div class="badge">Full day</div>
       </article>
-      <article class="day">
+      <article class="day" data-end="2026-09-11T23:30:00+04:00">
         <div class="datebox fri"><div class="dow">Friday</div><div class="date">11 Sep</div></div>
         <div class="details"><strong>7:30 AM – 11:30 PM</strong><small>Full-time Friday schedule ⭐</small></div>
         <div class="badge">Full time</div>
       </article>
     </div>
-  </section>
+  </details>
+
+  <details class="schedule schedule-collapsible week3-schedule" data-auto-close="2026-09-18T23:30:00+04:00" open>
+    <summary>
+      <div class="schedule-head">
+        <h2>🗓️ Week 3 Schedule</h2>
+        <span>14–18 September 2026</span>
+      </div>
+    </summary>
+    <div class="week2-note">✅ Full-time / full-day school schedule</div>
+    <div class="days">
+      <article class="day" data-end="2026-09-14T14:25:00+04:00">
+        <div class="datebox mon"><div class="dow">Monday</div><div class="date">14 Sep</div></div>
+        <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
+        <div class="badge">Full day</div>
+      </article>
+      <article class="day" data-end="2026-09-15T14:25:00+04:00">
+        <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">15 Sep</div></div>
+        <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
+        <div class="badge">Full day</div>
+      </article>
+      <article class="day" data-end="2026-09-16T14:25:00+04:00">
+        <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">16 Sep</div></div>
+        <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
+        <div class="badge">Full day</div>
+      </article>
+      <article class="day" data-end="2026-09-17T14:25:00+04:00">
+        <div class="datebox thu"><div class="dow">Thursday</div><div class="date">17 Sep</div></div>
+        <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
+        <div class="badge">Full day</div>
+      </article>
+      <article class="day" data-end="2026-09-18T23:30:00+04:00">
+        <div class="datebox fri"><div class="dow">Friday</div><div class="date">18 Sep</div></div>
+        <div class="details"><strong>7:30 AM – 11:30 PM</strong><small>Full-time Friday schedule ⭐</small></div>
+        <div class="badge">Full time</div>
+      </article>
+    </div>
+  </details>
 
   <div class="footer">
     Here’s to <strong>fewer missed reminders</strong>, more parent teamwork, and lots of happy kiddos! 😂💕🎒
@@ -957,20 +1125,21 @@
       });
     }
 
-    function updateWeek1Collapse() {
-      const block = document.querySelector('.week1-schedule[data-auto-close]');
-      if (!block) return;
-      const closeTime = new Date(block.dataset.autoClose);
-      if (new Date() >= closeTime) block.open = false;
+    function updateFinishedWeekCollapse() {
+      const now = new Date();
+      document.querySelectorAll('.schedule-collapsible[data-auto-close]').forEach(function (block) {
+        const closeTime = new Date(block.dataset.autoClose);
+        if (now >= closeTime) block.open = false;
+      });
     }
 
     updateCompletedScheduleItems();
-    updateWeek1Collapse();
+    updateFinishedWeekCollapse();
 
     /* Re-check automatically while the page stays open. */
     setInterval(function () {
       updateCompletedScheduleItems();
-      updateWeek1Collapse();
+      updateFinishedWeekCollapse();
     }, 30000);
   })();
 </script>
@@ -985,7 +1154,7 @@
         eyebrow: "📣 Parents' Friendly Corner",
         heroTitle: "Hi Moms &amp; Dads! 👋😊",
         heroText: "Our little parent-to-parent reminder hub for updates, questions, playdates, helpful info… and hopefully fewer “Wait, was that TODAY?!” moments. 😅💕",
-        banner: "🔴 NEXT WEEK SCHEDULE — FULL DAY / FULL TIME SCHOOL HOURS 🔴",
+        banner: "🔴 Return of the borrowed library book on September 14, 2026. 🔴",
         introHeading: "💬 What this group is for",
         intro1: "This little group is our friendly <strong>reminder &amp; announcement corner</strong> 📣✨ — just in case any of us misses something posted on ClassDojo. Feel free to repost important updates here so we can all stay in the loop! 💕",
         intro2: "Got a question? <strong>Ask away!</strong> 🙋‍♀️ And if you know the answer, feel free to jump in and help. Teamwork makes the school year a little easier! 😄",
@@ -995,9 +1164,19 @@
         whatsappLabel: "📱 Official WhatsApp / Contact Number",
         emailLabel: "✉️ Official Email Address",
         tinyNote: "For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜",
-        updateStamp: "🕒 Last updated: 2 September 2026 · 8:56 PM (UAE)",
+        updateStamp: "🕒 Last updated: 13 September 2026 · 3:30 PM (UAE)",
         faqHeading: "❓ Parent FAQs",
         faqIntro: "Tap a question to see the answer. 😊",
+        resourcesHeading: "🔗 Helpful Links &amp; Learning Resources",
+        resourcesIntro: "Quick access to useful class learning updates and official school dates.",
+        padletTitle: "What KG1 Are Learning About — Padlet",
+        padletMeta: "Released: 11 September 2026",
+        padletDesc: "Explore the latest KG1 learning topics and shared learning materials.",
+        padletAction: "Open Padlet ↗",
+        calendarTitle: "Academic Calendar 2026–2027",
+        calendarMeta: "Official RAK Academy calendar",
+        calendarDesc: "Check key school dates, holidays and academic-year information from RAK Academy.",
+        calendarAction: "View Academic Calendar ↗",
         faqQ1: "👧👦 How many children are in PRE KG1D?",
         faqA1: "As of 31 August 2026, PRE KG1D has <strong>22 students</strong> in total: <strong>10 girls and 12 boys</strong>.",
         faqQ2: "🏃 When is PE, and will there be a class timetable?",
@@ -1018,6 +1197,14 @@
         week2WedDow: "Wednesday", week2WedDate: "9 Sep", week2WedDetail: "Full-time school day 🎒", week2WedBadge: "Full day",
         week2ThuDow: "Thursday", week2ThuDate: "10 Sep", week2ThuDetail: "Full-time school day 🎒", week2ThuBadge: "Full day",
         week2FriDow: "Friday", week2FriDate: "11 Sep", week2FriDetail: "Full-time Friday schedule ⭐", week2FriBadge: "Full time",
+        week3Heading: "🗓️ Week 3 Schedule",
+        week3Range: "14–18 September 2026",
+        week3Note: "✅ Full-time / full-day school schedule",
+        week3MonDow: "Monday", week3MonDate: "14 Sep", week3MonDetail: "Full-time school day 🎒", week3MonBadge: "Full day",
+        week3TueDow: "Tuesday", week3TueDate: "15 Sep", week3TueDetail: "Full-time school day 🎒", week3TueBadge: "Full day",
+        week3WedDow: "Wednesday", week3WedDate: "16 Sep", week3WedDetail: "Full-time school day 🎒", week3WedBadge: "Full day",
+        week3ThuDow: "Thursday", week3ThuDate: "17 Sep", week3ThuDetail: "Full-time school day 🎒", week3ThuBadge: "Full day",
+        week3FriDow: "Friday", week3FriDate: "18 Sep", week3FriDetail: "Full-time Friday schedule ⭐", week3FriBadge: "Full time",
         monDow: "Monday", monDate: "31 Aug", monDetail: "Session with parent 👨‍👩‍👧", monBadge: "Parent joins",
         tueDow: "Tuesday", tueDate: "1 Sep", tueDetail: "Session — optional for parent to leave 👋😊", tueBadge: "Parent optional",
         wedDow: "Wednesday", wedDate: "2 Sep", wedDetail: "Shorter day, without parents 🎒", wedBadge: "Kids only",
@@ -1031,7 +1218,7 @@
         eyebrow: "📣 الركن الودّي لأولياء الأمور",
         heroTitle: "مرحباً بالأمهات والآباء! 👋😊",
         heroText: "مساحتنا الصغيرة بين أولياء الأمور للتذكيرات والتحديثات والأسئلة ومواعيد اللعب والمعلومات المفيدة… ولعلّها تقلّل من لحظات «لحظة… كان هذا اليوم؟!» 😅💕",
-        banner: "🔴 جدول الأسبوع القادم — دوام كامل / ساعات مدرسية كاملة 🔴",
+        banner: "🔴 إعادة كتاب المكتبة المُستعار في 14 سبتمبر 2026. 🔴",
         introHeading: "💬 ما الهدف من هذه المجموعة؟",
         intro1: "هذه المجموعة الصغيرة هي <strong>ركننا الودّي للتذكيرات والإعلانات</strong> 📣✨ — في حال فات أحدنا شيء نُشر على ClassDojo. لا تترددوا في إعادة نشر التحديثات المهمة هنا حتى نبقى جميعاً على اطلاع! 💕",
         intro2: "لديكم سؤال؟ <strong>تفضلوا واسألوا!</strong> 🙋‍♀️ وإذا كنتم تعرفون الإجابة، شاركونا وساعدوا. التعاون يجعل العام الدراسي أسهل قليلاً! 😄",
@@ -1041,19 +1228,29 @@
         whatsappLabel: "📱 واتساب / رقم التواصل الرسمي",
         emailLabel: "✉️ البريد الإلكتروني الرسمي",
         tinyNote: "للمسائل المدرسية الرسمية أو التأكيدات أو أي أمر يحتاج إلى رد رسمي، يرجى استخدام بيانات التواصل الرسمية للمدرسة أعلاه. 💜",
-        updateStamp: "🕒 آخر تحديث: 2 سبتمبر 2026 · 8:56 مساءً (الإمارات)",
-        faqHeading: "❓ أسئلة شائعة للوالدين",
-        faqIntro: "اضغطوا على السؤال لإظهار الإجابة. 😊",
+        updateStamp: "🕒 آخر تحديث: 13 سبتمبر 2026 · 3:30 مساءً (الإمارات)",
+        faqHeading: "❓ الأسئلة الشائعة لأولياء الأمور",
+        faqIntro: "اضغطوا على أي سؤال لعرض الإجابة. 😊",
+        resourcesHeading: "🔗 روابط مفيدة ومصادر تعليمية",
+        resourcesIntro: "وصول سريع إلى أحدث مواد التعلّم للصف والمواعيد الرسمية للمدرسة.",
+        padletTitle: "ما الذي يتعلّمه أطفال KG1 — Padlet",
+        padletMeta: "تاريخ النشر: 11 سبتمبر 2026",
+        padletDesc: "اطّلعوا على أحدث موضوعات تعلّم KG1 ومحاور الصف والمواد التعليمية المشتركة.",
+        padletAction: "فتح Padlet ↗",
+        calendarTitle: "التقويم الأكاديمي 2026–2027",
+        calendarMeta: "التقويم الرسمي لأكاديمية رأس الخيمة",
+        calendarDesc: "اطّلعوا على المواعيد المدرسية المهمة والعطلات ومعلومات العام الأكاديمي من أكاديمية رأس الخيمة.",
+        calendarAction: "عرض التقويم الأكاديمي ↗",
         faqQ1: "👧👦 كم عدد الأطفال في صف PRE KG1D؟",
         faqA1: "حتى 31 أغسطس 2026، يضم صف PRE KG1D <strong>22 طالباً</strong>: <strong>10 بنات و12 ولداً</strong>.",
         faqQ2: "🏃 متى حصة الرياضة؟ وهل سيكون هناك جدول للحصص؟",
         faqA2: "لا يزال جدول الحصص قيد الإعداد. وبمجرد اعتماده، سيتم مشاركته مع أولياء الأمور.",
-        faqA2Highlight: "سيتضمن الجدول الدروس والأنشطة اليومية للأطفال، مثل الصوتيات والقراءة والكتابة والرياضيات والعربية والرياضة وزيارات المكتبة وغيرها. كما لا يزال يوم ووقت حصة الرياضة قيد التحديد. وفي يوم الرياضة، سيحضر الأطفال بملابس الرياضة والحذاء الرياضي. 😊",
-        faqQ3: "👕👟 ما المقصود بملابس PE وما هي الـ trainers؟",
-        faqA3: "<strong>ملابس PE</strong> هي الملابس الرياضية التي يرتديها الأطفال خلال حصص التربية البدنية، مع زوج من <strong>الأحذية الرياضية (trainers)</strong>.",
-        faqA3Highlight: "في الوقت الحالي، يمكن للأطفال ارتداء الزي المدرسي العادي مع حذاء رياضي. ولحصة PE، يمكنهم ارتداء شورت أو ليغنز أسود مع حذاء رياضي. 😊",
-        faqMediaKit: "مثال على ملابس PE / الملابس الرياضية",
-        faqMediaTrainers: "مثال على الأحذية الرياضية (trainers)",
+        faqA2Highlight: "سيشمل الجدول دروس الأطفال وأنشطتهم اليومية، بما في ذلك الوعي الصوتي والقراءة والكتابة والرياضيات واللغة العربية والتربية البدنية وزيارات المكتبة وغيرها. ولا يزال يوم ووقت حصة التربية البدنية قيد التحديد. وفي أيام التربية البدنية، سيحضر الأطفال إلى المدرسة بالزي الرياضي والحذاء الرياضي. 😊",
+        faqQ3: "👕👟 ما المقصود بزي التربية البدنية وما المقصود بالحذاء الرياضي؟",
+        faqA3: "<strong>زي التربية البدنية</strong> هو الملابس الرياضية التي يرتديها الأطفال خلال حصص التربية البدنية، مع <strong>حذاء رياضي</strong> مناسب.",
+        faqA3Highlight: "في الوقت الحالي، يمكن للأطفال ارتداء الزي المدرسي المعتاد مع حذاء رياضي. ولحصة التربية البدنية، يمكنهم ارتداء شورت أو بنطال ليغنز أسود مع حذاء رياضي. 😊",
+        faqMediaKit: "مثال على زي التربية البدنية / الملابس الرياضية",
+        faqMediaTrainers: "مثال على الأحذية الرياضية",
         scheduleHeading: "🗓️ جدول الأسبوع الأول",
         scheduleRange: "31 أغسطس – 4 سبتمبر 2026",
         week2Heading: "🗓️ جدول الأسبوع الثاني",
@@ -1064,6 +1261,14 @@
         week2WedDow: "الأربعاء", week2WedDate: "9 سبتمبر", week2WedDetail: "يوم دراسي بدوام كامل 🎒", week2WedBadge: "يوم كامل",
         week2ThuDow: "الخميس", week2ThuDate: "10 سبتمبر", week2ThuDetail: "يوم دراسي بدوام كامل 🎒", week2ThuBadge: "يوم كامل",
         week2FriDow: "الجمعة", week2FriDate: "11 سبتمبر", week2FriDetail: "جدول الجمعة بدوام كامل ⭐", week2FriBadge: "دوام كامل",
+        week3Heading: "🗓️ جدول الأسبوع الثالث",
+        week3Range: "14–18 سبتمبر 2026",
+        week3Note: "✅ جدول مدرسي بدوام كامل / يوم كامل",
+        week3MonDow: "الاثنين", week3MonDate: "14 سبتمبر", week3MonDetail: "يوم دراسي بدوام كامل 🎒", week3MonBadge: "يوم كامل",
+        week3TueDow: "الثلاثاء", week3TueDate: "15 سبتمبر", week3TueDetail: "يوم دراسي بدوام كامل 🎒", week3TueBadge: "يوم كامل",
+        week3WedDow: "الأربعاء", week3WedDate: "16 سبتمبر", week3WedDetail: "يوم دراسي بدوام كامل 🎒", week3WedBadge: "يوم كامل",
+        week3ThuDow: "الخميس", week3ThuDate: "17 سبتمبر", week3ThuDetail: "يوم دراسي بدوام كامل 🎒", week3ThuBadge: "يوم كامل",
+        week3FriDow: "الجمعة", week3FriDate: "18 سبتمبر", week3FriDetail: "جدول الجمعة بدوام كامل ⭐", week3FriBadge: "دوام كامل",
         monDow: "الاثنين", monDate: "31 أغسطس", monDetail: "جلسة بحضور ولي الأمر 👨‍👩‍👧", monBadge: "ولي الأمر يحضر",
         tueDow: "الثلاثاء", tueDate: "1 سبتمبر", tueDetail: "جلسة — يمكن لولي الأمر المغادرة إذا رغب 👋😊", tueBadge: "حضور ولي الأمر اختياري",
         wedDow: "الأربعاء", wedDate: "2 سبتمبر", wedDetail: "يوم أقصر، من دون أولياء الأمور 🎒", wedBadge: "الأطفال فقط",
@@ -1077,7 +1282,7 @@
         eyebrow: "📣 L'angolo amichevole dei genitori",
         heroTitle: "Ciao mamme e papà! 👋😊",
         heroText: "Il nostro piccolo spazio tra genitori per promemoria, aggiornamenti, domande, incontri di gioco e informazioni utili… e, speriamo, meno momenti del tipo “Aspetta, era OGGI?!” 😅💕",
-        banner: "🔴 ORARIO DELLA PROSSIMA SETTIMANA — GIORNATA INTERA / ORARIO SCOLASTICO COMPLETO 🔴",
+        banner: "🔴 Restituzione del libro preso in prestito dalla biblioteca il 14 settembre 2026. 🔴",
         introHeading: "💬 A cosa serve questo gruppo",
         intro1: "Questo piccolo gruppo è il nostro <strong>angolo amichevole per promemoria e annunci</strong> 📣✨ — nel caso qualcuno di noi si perda qualcosa pubblicato su ClassDojo. Sentitevi liberi di ripostare qui gli aggiornamenti importanti, così restiamo tutti informati! 💕",
         intro2: "Avete una domanda? <strong>Chiedete pure!</strong> 🙋‍♀️ E se conoscete la risposta, intervenite e date una mano. Fare squadra rende l'anno scolastico un po' più semplice! 😄",
@@ -1087,19 +1292,29 @@
         whatsappLabel: "📱 WhatsApp / Numero di contatto ufficiale",
         emailLabel: "✉️ Indirizzo email ufficiale",
         tinyNote: "Per questioni scolastiche ufficiali, conferme o qualsiasi cosa richieda una risposta formale, utilizzate i contatti ufficiali della scuola indicati sopra. 💜",
-        updateStamp: "🕒 Ultimo aggiornamento: 2 settembre 2026 · 20:56 (EAU)",
+        updateStamp: "🕒 Ultimo aggiornamento: 13 settembre 2026 · 15:30 (EAU)",
         faqHeading: "❓ Domande frequenti dei genitori",
-        faqIntro: "Tocca una domanda per vedere la risposta. 😊",
+        faqIntro: "Tocca una domanda per visualizzare la risposta. 😊",
+        resourcesHeading: "🔗 Link utili e risorse didattiche",
+        resourcesIntro: "Accesso rapido agli aggiornamenti didattici della classe e alle date ufficiali della scuola.",
+        padletTitle: "Cosa stanno imparando i bambini di KG1 — Padlet",
+        padletMeta: "Pubblicato l’11 settembre 2026",
+        padletDesc: "Scopri gli ultimi argomenti di apprendimento di KG1, i temi affrontati in classe e i materiali didattici condivisi.",
+        padletAction: "Apri Padlet ↗",
+        calendarTitle: "Calendario accademico 2026–2027",
+        calendarMeta: "Calendario ufficiale RAK Academy",
+        calendarDesc: "Consulta le principali date scolastiche, le vacanze e le informazioni sull’anno accademico pubblicate da RAK Academy.",
+        calendarAction: "Visualizza il calendario accademico ↗",
         faqQ1: "👧👦 Quanti bambini ci sono nella PRE KG1D?",
         faqA1: "Al 31 agosto 2026, la PRE KG1D conta <strong>22 alunni</strong> in totale: <strong>10 bambine e 12 bambini</strong>.",
         faqQ2: "🏃 Quando c’è educazione fisica? Ci sarà un orario delle lezioni?",
         faqA2: "L’orario della classe è ancora in fase di definizione. Appena sarà pronto, verrà condiviso con i genitori.",
         faqA2Highlight: "L’orario includerà le lezioni e le attività quotidiane dei bambini, come fonetica, alfabetizzazione, matematica, arabo, educazione fisica, visite in biblioteca e altro. Anche il giorno e l’orario di educazione fisica sono ancora in fase di definizione. Nei giorni di PE, i bambini verranno a scuola con la divisa da PE e le scarpe da ginnastica. 😊",
-        faqQ3: "👕👟 Che cos’è il kit da PE e cosa sono le trainers?",
-        faqA3: "Il <strong>kit da PE</strong> è l’abbigliamento sportivo che i bambini indossano durante le lezioni di educazione fisica, insieme a un paio di <strong>scarpe da ginnastica (trainers)</strong>.",
-        faqA3Highlight: "Per il momento va bene la normale uniforme scolastica, insieme a un paio di scarpe da ginnastica. Per PE, i bambini possono indossare pantaloncini oppure leggings neri con scarpe sportive. 😊",
-        faqMediaKit: "Esempio di abbigliamento PE / sportivo",
-        faqMediaTrainers: "Esempio di trainers / scarpe sportive",
+        faqQ3: "👕👟 Che cos’è il kit per educazione fisica e cosa si intende per scarpe da ginnastica?",
+        faqA3: "Il <strong>kit per educazione fisica</strong> è l’abbigliamento sportivo che i bambini indossano durante le lezioni di educazione fisica, insieme a un paio di <strong>scarpe da ginnastica</strong>.",
+        faqA3Highlight: "Per il momento va bene la normale uniforme scolastica, insieme a un paio di scarpe da ginnastica. Per educazione fisica, i bambini possono indossare pantaloncini oppure leggings neri con scarpe sportive. 😊",
+        faqMediaKit: "Esempio di abbigliamento per educazione fisica / sportivo",
+        faqMediaTrainers: "Esempio di scarpe da ginnastica / sportive",
         scheduleHeading: "🗓️ Programma della Settimana 1",
         scheduleRange: "31 agosto – 4 settembre 2026",
         week2Heading: "🗓️ Programma della Settimana 2",
@@ -1110,6 +1325,14 @@
         week2WedDow: "Mercoledì", week2WedDate: "9 set", week2WedDetail: "Giornata scolastica a tempo pieno 🎒", week2WedBadge: "Giornata intera",
         week2ThuDow: "Giovedì", week2ThuDate: "10 set", week2ThuDetail: "Giornata scolastica a tempo pieno 🎒", week2ThuBadge: "Giornata intera",
         week2FriDow: "Venerdì", week2FriDate: "11 set", week2FriDetail: "Orario del venerdì a tempo pieno ⭐", week2FriBadge: "Tempo pieno",
+        week3Heading: "🗓️ Programma della Settimana 3",
+        week3Range: "14–18 settembre 2026",
+        week3Note: "✅ Orario scolastico a tempo pieno / giornata intera",
+        week3MonDow: "Lunedì", week3MonDate: "14 set", week3MonDetail: "Giornata scolastica a tempo pieno 🎒", week3MonBadge: "Giornata intera",
+        week3TueDow: "Martedì", week3TueDate: "15 set", week3TueDetail: "Giornata scolastica a tempo pieno 🎒", week3TueBadge: "Giornata intera",
+        week3WedDow: "Mercoledì", week3WedDate: "16 set", week3WedDetail: "Giornata scolastica a tempo pieno 🎒", week3WedBadge: "Giornata intera",
+        week3ThuDow: "Giovedì", week3ThuDate: "17 set", week3ThuDetail: "Giornata scolastica a tempo pieno 🎒", week3ThuBadge: "Giornata intera",
+        week3FriDow: "Venerdì", week3FriDate: "18 set", week3FriDetail: "Orario del venerdì a tempo pieno ⭐", week3FriBadge: "Tempo pieno",
         monDow: "Lunedì", monDate: "31 ago", monDetail: "Sessione con un genitore 👨‍👩‍👧", monBadge: "Genitore presente",
         tueDow: "Martedì", tueDate: "1 set", tueDetail: "Sessione — il genitore può scegliere di andare via 👋😊", tueBadge: "Genitore facoltativo",
         wedDow: "Mercoledì", wedDate: "2 set", wedDetail: "Giornata più corta, senza genitori 🎒", wedBadge: "Solo bambini",
@@ -1136,6 +1359,16 @@
       updateStamp: () => document.querySelector('.update-stamp span'),
       faqHeading: () => document.querySelector('.faq-head h2'),
       faqIntro: () => document.querySelector('.faq-head p'),
+      resourcesHeading: () => document.querySelector('.resources-head h2'),
+      resourcesIntro: () => document.querySelector('.resources-head p'),
+      padletTitle: () => document.querySelector('.padlet-link .resource-title'),
+      padletMeta: () => document.querySelector('.padlet-link .resource-meta'),
+      padletDesc: () => document.querySelector('.padlet-link .resource-desc'),
+      padletAction: () => document.querySelector('.padlet-link .resource-action'),
+      calendarTitle: () => document.querySelector('.calendar-link .resource-title'),
+      calendarMeta: () => document.querySelector('.calendar-link .resource-meta'),
+      calendarDesc: () => document.querySelector('.calendar-link .resource-desc'),
+      calendarAction: () => document.querySelector('.calendar-link .resource-action'),
       faqQ1: () => document.querySelectorAll('.faq-item summary')[0],
       faqA1: () => document.querySelectorAll('.faq-answer p')[0],
       faqQ2: () => document.querySelectorAll('.faq-item summary')[1],
@@ -1171,6 +1404,29 @@
       week2FriDate: () => document.querySelectorAll('.week2-schedule .day')[4].querySelector('.date'),
       week2FriDetail: () => document.querySelectorAll('.week2-schedule .day')[4].querySelector('small'),
       week2FriBadge: () => document.querySelectorAll('.week2-schedule .day')[4].querySelector('.badge'),
+      week3Heading: () => document.querySelector('.week3-schedule .schedule-head h2'),
+      week3Range: () => document.querySelector('.week3-schedule .schedule-head span'),
+      week3Note: () => document.querySelector('.week3-schedule .week2-note'),
+      week3MonDow: () => document.querySelectorAll('.week3-schedule .day')[0].querySelector('.dow'),
+      week3MonDate: () => document.querySelectorAll('.week3-schedule .day')[0].querySelector('.date'),
+      week3MonDetail: () => document.querySelectorAll('.week3-schedule .day')[0].querySelector('small'),
+      week3MonBadge: () => document.querySelectorAll('.week3-schedule .day')[0].querySelector('.badge'),
+      week3TueDow: () => document.querySelectorAll('.week3-schedule .day')[1].querySelector('.dow'),
+      week3TueDate: () => document.querySelectorAll('.week3-schedule .day')[1].querySelector('.date'),
+      week3TueDetail: () => document.querySelectorAll('.week3-schedule .day')[1].querySelector('small'),
+      week3TueBadge: () => document.querySelectorAll('.week3-schedule .day')[1].querySelector('.badge'),
+      week3WedDow: () => document.querySelectorAll('.week3-schedule .day')[2].querySelector('.dow'),
+      week3WedDate: () => document.querySelectorAll('.week3-schedule .day')[2].querySelector('.date'),
+      week3WedDetail: () => document.querySelectorAll('.week3-schedule .day')[2].querySelector('small'),
+      week3WedBadge: () => document.querySelectorAll('.week3-schedule .day')[2].querySelector('.badge'),
+      week3ThuDow: () => document.querySelectorAll('.week3-schedule .day')[3].querySelector('.dow'),
+      week3ThuDate: () => document.querySelectorAll('.week3-schedule .day')[3].querySelector('.date'),
+      week3ThuDetail: () => document.querySelectorAll('.week3-schedule .day')[3].querySelector('small'),
+      week3ThuBadge: () => document.querySelectorAll('.week3-schedule .day')[3].querySelector('.badge'),
+      week3FriDow: () => document.querySelectorAll('.week3-schedule .day')[4].querySelector('.dow'),
+      week3FriDate: () => document.querySelectorAll('.week3-schedule .day')[4].querySelector('.date'),
+      week3FriDetail: () => document.querySelectorAll('.week3-schedule .day')[4].querySelector('small'),
+      week3FriBadge: () => document.querySelectorAll('.week3-schedule .day')[4].querySelector('.badge'),
       monDow: () => document.querySelectorAll('.day')[0].querySelector('.dow'),
       monDate: () => document.querySelectorAll('.day')[0].querySelector('.date'),
       monDetail: () => document.querySelectorAll('.day')[0].querySelector('small'),
