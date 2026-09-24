@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>RAK Academy Parents Corner - Week 1</title>
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Kk0qla_JKTuj72MKosWQiPoFQ86mqdOe0DSuraN5fdmrqWxPCLh58JSBt0obaKIBSXTKUtZKVYDNrw7f10kvq6_zHgPB_K1_TmkBZfqXQAd2AJX9Lzfg9Mld0nOzM0QH9whSZVPLmxdwoeqyJE07V0Hf18SwVFp9ovdfY_X9PDazUglFovAtWrhoXJoXjeCghzTIis6ZjPcehOTkIzeGuj6Cq04mceEX-Kt7fJhd8ZCGcl5B0-h4Al-nSBGMowilSVNV6yvu0gxsgCOzGAsO9E5OrCEpbOBqFi6_bKc2MijoU0ChRL-mRh53RKL7g_U3BtRCmzvg3N5mNFksw0aaL1_LrTVGAvd_CCmhGXfdQ-gNtzyLQZP_aVqHJxnWYJ1j" charset="UTF-8"></script><style>
+<style>
   :root{
     --ink:#2f3640;
     --muted:#68707c;
@@ -870,7 +870,25 @@
 
   @media print{.language-switcher{display:none}}
 
-
+  /* Mobile link fix: ensure all interactive elements are touch-friendly */
+  @media(max-width:760px){
+    a, button, summary, .email-contact {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .contact-box a, 
+    .resource-link {
+      min-height: 48px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .email-actions a {
+      min-height: 40px;
+      padding: 8px 12px;
+    }
+  }
 
   /* Mobile + desktop compatibility hardening */
   html{
