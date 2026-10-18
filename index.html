@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RAK Academy Parents Corner - Week 1</title>
+<title>RAK Academy Parents Corner | Schedule to December 2026</title>
 <style>
   :root{
     --ink:#2f3640;
@@ -1090,6 +1090,61 @@
     .month-archive > summary{padding:15px 14px;font-size:1.08rem}
   }
 
+
+  /* Calendar extension: retains the existing card/day styling and colour palette. */
+  .calendar-key-card{
+    margin-top:20px;padding:21px 23px;background:#fff;border:1px solid var(--border);
+    border-radius:24px;box-shadow:var(--shadow);
+  }
+  .calendar-key-card h2{margin:0 0 5px;font-size:1.32rem}
+  .calendar-key-intro{color:var(--muted);margin:0 0 14px;font-size:.91rem}
+  .calendar-key-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 16px}
+  .calendar-key{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.87rem;min-width:0}
+  .calendar-swatch{width:18px;height:18px;flex:0 0 18px;border-radius:5px;border:1px solid rgba(47,54,64,.15)}
+  .calendar-swatch.public-holiday{background:#fff300}
+  .calendar-swatch.term-break{background:#f7b500}
+  .calendar-swatch.midterm-break{background:#bdbdbd}
+  .calendar-swatch.term-boundary{background:#3ca456}
+  .calendar-key-warning{margin:13px 0 0;padding:11px 13px;background:var(--yellow-soft);
+    border:1px solid #f4d98d;border-radius:12px;font-size:.86rem}
+  .extended-week{margin-top:14px}
+  .extended-week .cal-week-note{margin:0 0 12px}
+  .calendar-closure-note{background:#f5f3f8;color:#55505b;border-color:#ddd6e7}
+  .extended-day.calendar-midterm{background:#f5f5f6;border-color:#dadce0}
+  .extended-day.calendar-holiday{background:#fffce5;border-color:#f3e397}
+  .extended-day.calendar-winter{background:#fff7e6;border-color:#f4d79c}
+  .extended-day.calendar-midterm .badge,
+  .extended-day.calendar-holiday .badge,
+  .extended-day.calendar-winter .badge{white-space:normal;text-align:center}
+  .extended-day.calendar-midterm .datebox{background:#e1e1e3;color:#55505b}
+  .extended-day.calendar-holiday .datebox{background:#fff3a5;color:#7a5a00}
+  .extended-day.calendar-winter .datebox{background:#ffe3a5;color:#805100}
+  .extended-day.calendar-midterm.completed .datebox,
+  .extended-day.calendar-midterm.completed .details,
+  .extended-day.calendar-midterm.completed .badge,
+  .extended-day.calendar-holiday.completed .datebox,
+  .extended-day.calendar-holiday.completed .details,
+  .extended-day.calendar-holiday.completed .badge,
+  .extended-day.calendar-winter.completed .datebox,
+  .extended-day.calendar-winter.completed .details,
+  .extended-day.calendar-winter.completed .badge{text-decoration:none;opacity:1}
+  .calendar-extra-month .schedule:first-child{margin-top:14px}
+  html[dir="rtl"] .calendar-key{text-align:right}
+  html[dir="rtl"] .extended-day.calendar-midterm .cal-time,
+  html[dir="rtl"] .extended-day.calendar-holiday .cal-time,
+  html[dir="rtl"] .extended-day.calendar-winter .cal-time{direction:rtl;text-align:right}
+  @media(max-width:760px){
+    .calendar-key-card{padding:17px;border-radius:18px;margin-top:16px}
+    .calendar-key-grid{grid-template-columns:1fr;gap:5px}
+    .calendar-key{align-items:flex-start;font-size:.85rem}
+    .calendar-swatch{margin-top:3px}
+    .extended-week .badge{grid-column:2}
+  }
+  @media(max-width:420px){
+    .calendar-key-card h2{font-size:1.16rem}
+    .extended-week .schedule-head h2{font-size:1.22rem}
+  }
+
 </style>
 </head>
 <body>
@@ -1114,7 +1169,7 @@
   </div>
 
   <div class="update-stamp" aria-label="Page update timestamp">
-    <span>🕒 Last updated: 30 September 2026 · 8:19 AM (UAE)</span>
+    <span>🕒 Last updated: 18 October 2026 (UAE)</span>
   </div>
 
 
@@ -1227,6 +1282,18 @@
     </div>
   </section>
 
+  <section class="calendar-key-card" aria-labelledby="calendar-key-heading">
+    <h2 id="calendar-key-heading" data-calendar-text="legendHeading">📅 Academic calendar notes &amp; colour legend</h2>
+    <p class="calendar-key-intro" data-calendar-text="legendIntro">Dates are based on the RAK Academy 2026–2027 academic calendar. The daily class times repeat the previously shared KG1D timetable.</p>
+    <div class="calendar-key-grid">
+      <div class="calendar-key"><span class="calendar-swatch public-holiday" aria-hidden="true"></span><span data-calendar-text="publicLegend">Yellow · Public holiday — school closed; TBC and subject to official declaration</span></div>
+      <div class="calendar-key"><span class="calendar-swatch term-break" aria-hidden="true"></span><span data-calendar-text="winterLegend">Orange · End-of-term break — no classes for students</span></div>
+      <div class="calendar-key"><span class="calendar-swatch midterm-break" aria-hidden="true"></span><span data-calendar-text="midtermLegend">Grey · Mid-term break — no classes for students</span></div>
+      <div class="calendar-key"><span class="calendar-swatch term-boundary" aria-hidden="true"></span><span data-calendar-text="termLegend">Green · Term start/end marker on the school calendar</span></div>
+    </div>
+    <p class="calendar-key-warning" data-calendar-text="calendarWarning">⚠️ The 2–4 December National Day dates are marked TBC. Please check the academy's official calendar or announcements for final confirmation. CCA/pick-up times are class-specific and may change.</p>
+  </section>
+
   <details class="month-archive september-month" data-month-end="2026-10-01T00:00:00+04:00" open>
     <summary><span class="month-title">📁 September 2026</span></summary>
     <div class="month-archive-content">
@@ -1331,9 +1398,9 @@
         <div class="details"><strong>7:30 AM – 2:25 PM</strong><small>Full-time school day 🎒</small></div>
         <div class="badge">Full day</div>
       </article>
-      <article class="day" data-end="2026-09-11T23:30:00+04:00">
+      <article class="day" data-end="2026-09-11T11:30:00+04:00">
         <div class="datebox fri"><div class="dow">Friday</div><div class="date">11 Sep</div></div>
-        <div class="details"><strong>7:30 AM – 11:30 PM</strong><small>Full-time Friday schedule ⭐</small></div>
+        <div class="details"><strong>7:30 AM – 11:30 AM</strong><small>Full-time Friday schedule ⭐</small></div>
         <div class="badge">Full time</div>
       </article>
     </div>
@@ -1368,9 +1435,9 @@
         <div class="details"><strong>7:30 AM – 3:20 PM</strong><small>Thursday CCAs (Edge in Action) · Normal pick-up at 2:25 PM for children without older siblings at our school · Pick-up at 3:20 PM for CCA children and KG1 siblings · Bus children supervised in Pre-K and taken to buses at 3:10 PM 🎒</small></div>
         <div class="badge">CCA Thursday</div>
       </article>
-      <article class="day" data-end="2026-09-18T23:30:00+04:00">
+      <article class="day" data-end="2026-09-18T11:30:00+04:00">
         <div class="datebox fri"><div class="dow">Friday</div><div class="date">18 Sep</div></div>
-        <div class="details"><strong>7:30 AM – 11:30 PM</strong><small>Full-time Friday schedule ⭐</small></div>
+        <div class="details"><strong>7:30 AM – 11:30 AM</strong><small>Full-time Friday schedule ⭐</small></div>
         <div class="badge">Full time</div>
       </article>
     </div>
@@ -1405,9 +1472,9 @@
         <div class="details"><strong>7:30 AM – 3:20 PM</strong><small>Thursday CCAs (Edge in Action) · Normal pick-up at 2:25 PM for children without older siblings at our school · Pick-up at 3:20 PM for CCA children and KG1 siblings · Bus children supervised in Pre-K and taken to buses at 3:10 PM 🎒</small></div>
         <div class="badge">CCA Thursday</div>
       </article>
-      <article class="day" data-end="2026-09-25T23:30:00+04:00">
+      <article class="day" data-end="2026-09-25T11:30:00+04:00">
         <div class="datebox fri"><div class="dow">Friday</div><div class="date">25 Sep</div></div>
-        <div class="details"><strong>7:30 AM – 11:30 PM</strong><small>Full-time Friday schedule ⭐</small></div>
+        <div class="details"><strong>7:30 AM – 11:30 AM</strong><small>Full-time Friday schedule ⭐</small></div>
         <div class="badge">Full time</div>
       </article>
     </div>
@@ -1449,10 +1516,489 @@
             <div class="details"><strong>7:30 AM – 3:20 PM</strong><small>Thursday CCAs (Edge in Action) · Normal pick-up at 2:25 PM for children without older siblings at our school · Pick-up at 3:20 PM for CCA children and KG1 siblings · Bus children supervised in Pre-K and taken to buses at 3:10 PM 🎒</small></div>
             <div class="badge">CCA Thursday</div>
           </article>
-          <article class="day" data-end="2026-10-02T23:30:00+04:00">
+          <article class="day" data-end="2026-10-02T11:30:00+04:00">
             <div class="datebox fri"><div class="dow">Friday</div><div class="date">2 Oct</div></div>
-            <div class="details"><strong>7:30 AM – 11:30 PM</strong><small>Full-time Friday schedule ⭐</small></div>
+            <div class="details"><strong>7:30 AM – 11:30 AM</strong><small>Full-time Friday schedule ⭐</small></div>
             <div class="badge">Full time</div>
+          </article>
+        </div>
+      </details>
+
+      <details class="schedule schedule-collapsible extended-week october-week2-schedule" data-month="october" data-week="2" data-start="2026-10-05" data-finish="2026-10-09" data-note="regular" data-auto-close="2026-10-09T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ October · Week 2 Schedule</h2>
+            <span class="cal-week-range">5–9 October 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">✅ Normal Monday–Friday timetable · Thursdays: P.E. kit and trainers; separate CCA pick-up arrangements.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-10-05" data-end="2026-10-05T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">5 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-10-06" data-end="2026-10-06T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">6 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-10-07" data-end="2026-10-07T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">7 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-10-08" data-end="2026-10-08T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">8 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="friday" data-day="2026-10-09" data-end="2026-10-09T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">9 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Friday school session ⭐</small></div>
+            <div class="badge cal-badge">Friday</div>
+          </article>
+        </div>
+      </details>
+
+      <details class="schedule schedule-collapsible extended-week october-week3-schedule" data-month="october" data-week="3" data-start="2026-10-12" data-finish="2026-10-16" data-note="midterm" data-auto-close="2026-10-16T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ October · Week 3 Schedule</h2>
+            <span class="cal-week-range">12–16 October 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note calendar-closure-note">🏫 12–16 October: Mid-term break for students. School closed (per RAK Academy calendar).</div>
+        <div class="days">
+          <article class="day extended-day calendar-midterm" data-kind="midterm" data-day="2026-10-12" data-end="2026-10-12T23:59:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">12 Oct</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Mid-term break for students — no classes.</small></div>
+            <div class="badge cal-badge">Mid-term break</div>
+          </article>
+          <article class="day extended-day calendar-midterm" data-kind="midterm" data-day="2026-10-13" data-end="2026-10-13T23:59:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">13 Oct</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Mid-term break for students — no classes.</small></div>
+            <div class="badge cal-badge">Mid-term break</div>
+          </article>
+          <article class="day extended-day calendar-midterm" data-kind="midterm" data-day="2026-10-14" data-end="2026-10-14T23:59:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">14 Oct</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Mid-term break for students — no classes.</small></div>
+            <div class="badge cal-badge">Mid-term break</div>
+          </article>
+          <article class="day extended-day calendar-midterm" data-kind="midterm" data-day="2026-10-15" data-end="2026-10-15T23:59:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">15 Oct</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Mid-term break for students — no classes.</small></div>
+            <div class="badge cal-badge">Mid-term break</div>
+          </article>
+          <article class="day extended-day calendar-midterm" data-kind="midterm" data-day="2026-10-16" data-end="2026-10-16T23:59:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">16 Oct</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Mid-term break for students — no classes.</small></div>
+            <div class="badge cal-badge">Mid-term break</div>
+          </article>
+        </div>
+      </details>
+
+      <details class="schedule schedule-collapsible extended-week october-week4-schedule" data-month="october" data-week="4" data-start="2026-10-19" data-finish="2026-10-23" data-note="reopen" data-auto-close="2026-10-23T23:59:00+04:00" open>
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ October · Week 4 Schedule</h2>
+            <span class="cal-week-range">19–23 October 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">🎒 Back to school: normal Monday–Friday timetable resumes on 19 October. Thursday P.E. / CCA arrangements apply.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-10-19" data-end="2026-10-19T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">19 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-10-20" data-end="2026-10-20T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">20 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-10-21" data-end="2026-10-21T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">21 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-10-22" data-end="2026-10-22T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">22 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="friday" data-day="2026-10-23" data-end="2026-10-23T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">23 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Friday school session ⭐</small></div>
+            <div class="badge cal-badge">Friday</div>
+          </article>
+        </div>
+      </details>
+
+      <details class="schedule schedule-collapsible extended-week october-week5-schedule" data-month="october" data-week="5" data-start="2026-10-26" data-finish="2026-10-30" data-note="regular" data-auto-close="2026-10-30T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ October · Week 5 Schedule</h2>
+            <span class="cal-week-range">26–30 October 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">✅ Normal Monday–Friday timetable · Thursdays: P.E. kit and trainers; separate CCA pick-up arrangements.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-10-26" data-end="2026-10-26T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">26 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-10-27" data-end="2026-10-27T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">27 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-10-28" data-end="2026-10-28T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">28 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-10-29" data-end="2026-10-29T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">29 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="friday" data-day="2026-10-30" data-end="2026-10-30T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">30 Oct</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Friday school session ⭐</small></div>
+            <div class="badge cal-badge">Friday</div>
+          </article>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="month-archive november-month calendar-extra-month" data-cal-month="november" data-month-end="2026-12-01T00:00:00+04:00">
+    <summary><span class="month-title">📁 November 2026</span></summary>
+    <div class="month-archive-content">
+      <details class="schedule schedule-collapsible extended-week november-week1-schedule" data-month="november" data-week="1" data-start="2026-11-02" data-finish="2026-11-06" data-note="regular" data-auto-close="2026-11-06T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ November · Week 1 Schedule</h2>
+            <span class="cal-week-range">2–6 November 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">✅ Normal Monday–Friday timetable · Thursdays: P.E. kit and trainers; separate CCA pick-up arrangements.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-11-02" data-end="2026-11-02T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">2 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-03" data-end="2026-11-03T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">3 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-04" data-end="2026-11-04T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">4 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-11-05" data-end="2026-11-05T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">5 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="friday" data-day="2026-11-06" data-end="2026-11-06T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">6 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Friday school session ⭐</small></div>
+            <div class="badge cal-badge">Friday</div>
+          </article>
+        </div>
+      </details>
+      <details class="schedule schedule-collapsible extended-week november-week2-schedule" data-month="november" data-week="2" data-start="2026-11-09" data-finish="2026-11-13" data-note="regular" data-auto-close="2026-11-13T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ November · Week 2 Schedule</h2>
+            <span class="cal-week-range">9–13 November 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">✅ Normal Monday–Friday timetable · Thursdays: P.E. kit and trainers; separate CCA pick-up arrangements.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-11-09" data-end="2026-11-09T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">9 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-10" data-end="2026-11-10T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">10 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-11" data-end="2026-11-11T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">11 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-11-12" data-end="2026-11-12T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">12 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="friday" data-day="2026-11-13" data-end="2026-11-13T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">13 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Friday school session ⭐</small></div>
+            <div class="badge cal-badge">Friday</div>
+          </article>
+        </div>
+      </details>
+      <details class="schedule schedule-collapsible extended-week november-week3-schedule" data-month="november" data-week="3" data-start="2026-11-16" data-finish="2026-11-20" data-note="regular" data-auto-close="2026-11-20T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ November · Week 3 Schedule</h2>
+            <span class="cal-week-range">16–20 November 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">✅ Normal Monday–Friday timetable · Thursdays: P.E. kit and trainers; separate CCA pick-up arrangements.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-11-16" data-end="2026-11-16T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">16 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-17" data-end="2026-11-17T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">17 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-18" data-end="2026-11-18T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">18 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-11-19" data-end="2026-11-19T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">19 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="friday" data-day="2026-11-20" data-end="2026-11-20T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">20 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Friday school session ⭐</small></div>
+            <div class="badge cal-badge">Friday</div>
+          </article>
+        </div>
+      </details>
+      <details class="schedule schedule-collapsible extended-week november-week4-schedule" data-month="november" data-week="4" data-start="2026-11-23" data-finish="2026-11-27" data-note="regular" data-auto-close="2026-11-27T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ November · Week 4 Schedule</h2>
+            <span class="cal-week-range">23–27 November 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">✅ Normal Monday–Friday timetable · Thursdays: P.E. kit and trainers; separate CCA pick-up arrangements.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-11-23" data-end="2026-11-23T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">23 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-24" data-end="2026-11-24T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">24 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-11-25" data-end="2026-11-25T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">25 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-11-26" data-end="2026-11-26T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">26 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="friday" data-day="2026-11-27" data-end="2026-11-27T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">27 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Friday school session ⭐</small></div>
+            <div class="badge cal-badge">Friday</div>
+          </article>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="month-archive december-month calendar-extra-month" data-cal-month="december" data-month-end="2027-01-01T00:00:00+04:00">
+    <summary><span class="month-title">📁 December 2026</span></summary>
+    <div class="month-archive-content">
+      <details class="schedule schedule-collapsible extended-week december-week1-schedule" data-month="december" data-week="1" data-start="2026-11-30" data-finish="2026-12-04" data-note="decHoliday" data-auto-close="2026-12-04T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ December · Week 1 Schedule</h2>
+            <span class="cal-week-range">30 November–4 December 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note calendar-closure-note">🇦🇪 2–4 December: UAE National Day holidays (TBC). No classes are scheduled; dates are subject to official confirmation.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-11-30" data-end="2026-11-30T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">30 Nov</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-12-01" data-end="2026-12-01T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">1 Dec</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day calendar-holiday" data-kind="holiday" data-day="2026-12-02" data-end="2026-12-02T23:59:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">2 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed (TBC)</strong><small class="cal-detail">UAE National Day (TBC) — school closed as scheduled; subject to official confirmation.</small></div>
+            <div class="badge cal-badge">Holiday · TBC</div>
+          </article>
+          <article class="day extended-day calendar-holiday" data-kind="holiday" data-day="2026-12-03" data-end="2026-12-03T23:59:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">3 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed (TBC)</strong><small class="cal-detail">UAE National Day (TBC) — school closed as scheduled; subject to official confirmation.</small></div>
+            <div class="badge cal-badge">Holiday · TBC</div>
+          </article>
+          <article class="day extended-day calendar-holiday" data-kind="holiday" data-day="2026-12-04" data-end="2026-12-04T23:59:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">4 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed (TBC)</strong><small class="cal-detail">UAE National Day (TBC) — school closed as scheduled; subject to official confirmation.</small></div>
+            <div class="badge cal-badge">Holiday · TBC</div>
+          </article>
+        </div>
+      </details>
+      <details class="schedule schedule-collapsible extended-week december-week2-schedule" data-month="december" data-week="2" data-start="2026-12-07" data-finish="2026-12-11" data-note="termEnd" data-auto-close="2026-12-11T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ December · Week 2 Schedule</h2>
+            <span class="cal-week-range">7–11 December 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note ">📘 Friday 11 December: Term 1 ends. This is the last teaching day before winter break.</div>
+        <div class="days">
+          <article class="day extended-day " data-kind="school" data-day="2026-12-07" data-end="2026-12-07T14:25:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">7 Dec</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-12-08" data-end="2026-12-08T14:25:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">8 Dec</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="school" data-day="2026-12-09" data-end="2026-12-09T14:25:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">9 Dec</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM</strong><small class="cal-detail">Full school day 🎒</small></div>
+            <div class="badge cal-badge">Full day</div>
+          </article>
+          <article class="day extended-day " data-kind="cca" data-day="2026-12-10" data-end="2026-12-10T15:20:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">10 Dec</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 2:25 PM / 3:20 PM (CCA)</strong><small class="cal-detail">P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒</small></div>
+            <div class="badge cal-badge">P.E. / CCA</div>
+          </article>
+          <article class="day extended-day " data-kind="termEnd" data-day="2026-12-11" data-end="2026-12-11T11:30:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">11 Dec</div></div>
+            <div class="details"><strong class="cal-time">7:30 AM – 11:30 AM</strong><small class="cal-detail">Last teaching day of Term 1 · Friday school timetable ⭐</small></div>
+            <div class="badge cal-badge">Term 1 ends</div>
+          </article>
+        </div>
+      </details>
+      <details class="schedule schedule-collapsible extended-week december-week3-schedule" data-month="december" data-week="3" data-start="2026-12-14" data-finish="2026-12-18" data-note="winter" data-auto-close="2026-12-18T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ December · Week 3 Schedule</h2>
+            <span class="cal-week-range">14–18 December 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note calendar-closure-note">❄️ Winter break for students: 14–31 December. No classes; Term 2 begins 4 January 2027.</div>
+        <div class="days">
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-14" data-end="2026-12-14T23:59:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">14 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-15" data-end="2026-12-15T23:59:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">15 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-16" data-end="2026-12-16T23:59:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">16 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-17" data-end="2026-12-17T23:59:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">17 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-18" data-end="2026-12-18T23:59:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">18 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+        </div>
+      </details>
+      <details class="schedule schedule-collapsible extended-week december-week4-schedule" data-month="december" data-week="4" data-start="2026-12-21" data-finish="2026-12-25" data-note="winter" data-auto-close="2026-12-25T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ December · Week 4 Schedule</h2>
+            <span class="cal-week-range">21–25 December 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note calendar-closure-note">❄️ Winter break for students: 14–31 December. No classes; Term 2 begins 4 January 2027.</div>
+        <div class="days">
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-21" data-end="2026-12-21T23:59:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">21 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-22" data-end="2026-12-22T23:59:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">22 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-23" data-end="2026-12-23T23:59:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">23 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-24" data-end="2026-12-24T23:59:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">24 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-25" data-end="2026-12-25T23:59:00+04:00">
+            <div class="datebox fri"><div class="dow">Friday</div><div class="date">25 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+        </div>
+      </details>
+      <details class="schedule schedule-collapsible extended-week december-week5-schedule" data-month="december" data-week="5" data-start="2026-12-28" data-finish="2026-12-31" data-note="winterFinal" data-auto-close="2026-12-31T23:59:00+04:00">
+        <summary>
+          <div class="schedule-head">
+            <h2 class="cal-week-heading">🗓️ December · Week 5 Schedule</h2>
+            <span class="cal-week-range">28–31 December 2026</span>
+          </div>
+        </summary>
+        <div class="week2-note cal-week-note calendar-closure-note">❄️ Winter break continues through 31 December. This final week is shown only through the end of 2026.</div>
+        <div class="days">
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-28" data-end="2026-12-28T23:59:00+04:00">
+            <div class="datebox mon"><div class="dow">Monday</div><div class="date">28 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-29" data-end="2026-12-29T23:59:00+04:00">
+            <div class="datebox tue"><div class="dow">Tuesday</div><div class="date">29 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-30" data-end="2026-12-30T23:59:00+04:00">
+            <div class="datebox wed"><div class="dow">Wednesday</div><div class="date">30 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
+          </article>
+          <article class="day extended-day calendar-winter" data-kind="winter" data-day="2026-12-31" data-end="2026-12-31T23:59:00+04:00">
+            <div class="datebox thu"><div class="dow">Thursday</div><div class="date">31 Dec</div></div>
+            <div class="details"><strong class="cal-time">School closed</strong><small class="cal-detail">Term 1 winter break for students — no classes.</small></div>
+            <div class="badge cal-badge">Winter break</div>
           </article>
         </div>
       </details>
@@ -1511,8 +2057,8 @@
     /* Re-check automatically while the page stays open. */
     setInterval(function () {
       updateCompletedScheduleItems();
-      updateFinishedWeekCollapse();
-      updateFinishedMonthCollapse();
+      // Past weeks/months are auto-collapsed once on page load, not repeatedly:
+      // manual expansion stays open while parents review old schedules.
     }, 30000);
   })();
 </script>
@@ -1536,10 +2082,122 @@
 
 
 <script>
+  /* Extra school-calendar content, professionally localised without altering earlier translations. */
   (function () {
     const translations = {
       en: {
-        title: "RAK Academy Parents Corner - Week 1",
+        locale:'en-GB',month:{october:'October',november:'November',december:'December'},
+        weekHeading:(m,n)=>`🗓️ ${m} · Week ${n} Schedule`,
+        notes:{
+          regular:'✅ Normal Monday–Friday timetable · Thursdays: P.E. kit and trainers; separate CCA pick-up arrangements.',
+          midterm:'🏫 12–16 October: Mid-term break for students. School closed (per RAK Academy calendar).',
+          reopen:'🎒 Back to school: normal Monday–Friday timetable resumes on 19 October. Thursday P.E. / CCA arrangements apply.',
+          decHoliday:'🇦🇪 2–4 December: UAE National Day holidays (TBC). No classes are scheduled; dates are subject to official confirmation.',
+          termEnd:'📘 Friday 11 December: Term 1 ends. This is the last teaching day before winter break.',
+          winter:'❄️ Winter break for students: 14–31 December. No classes; Term 2 begins 4 January 2027.',
+          winterFinal:'❄️ Winter break continues through 31 December. This final week is shown only through the end of 2026.'
+        },
+        legendHeading:'📅 Academic calendar notes & colour legend',
+        legendIntro:'Dates are based on the RAK Academy 2026–2027 academic calendar. The daily class times repeat the previously shared KG1D timetable.',
+        publicLegend:'Yellow · Public holiday — school closed; TBC and subject to official declaration',
+        winterLegend:'Orange · End-of-term break — no classes for students',
+        midtermLegend:'Grey · Mid-term break — no classes for students',
+        termLegend:'Green · Term start/end marker on the school calendar',
+        calendarWarning:'⚠️ The 2–4 December National Day dates are marked TBC. Please check the academy’s official calendar or announcements for final confirmation. CCA/pick-up times are class-specific and may change.',
+        time:{school:'7:30 AM – 2:25 PM',cca:'7:30 AM – 2:25 PM / 3:20 PM (CCA)',friday:'7:30 AM – 11:30 AM',termEnd:'7:30 AM – 11:30 AM',midterm:'School closed',holiday:'School closed (TBC)',winter:'School closed'},
+        detail:{school:'Full school day 🎒',cca:'P.E. kit and trainers · Regular pickup 2:25 PM · CCA / KG1 siblings pickup 3:20 PM · Bus children accompanied to buses at 3:10 PM 🎒',friday:'Friday school session ⭐',termEnd:'Last teaching day of Term 1 · Friday school timetable ⭐',midterm:'Mid-term break for students — no classes.',holiday:'UAE National Day (TBC) — school closed as scheduled; subject to official confirmation.',winter:'Term 1 winter break for students — no classes.'},
+        badge:{school:'Full day',cca:'P.E. / CCA',friday:'Friday',termEnd:'Term 1 ends',midterm:'Mid-term break',holiday:'Holiday · TBC',winter:'Winter break'}
+      },
+      ar: {
+        locale:'ar-AE',month:{october:'أكتوبر',november:'نوفمبر',december:'ديسمبر'},
+        weekHeading:(m,n)=>`🗓️ ${m} · جدول الأسبوع ${n}`,
+        notes:{
+          regular:'✅ الجدول الدراسي المعتاد من الاثنين إلى الجمعة · الخميس: يُرجى إحضار زي التربية البدنية والحذاء الرياضي، مع مراعاة أوقات الانصراف الخاصة بالأنشطة.',
+          midterm:'🏫 من 12 إلى 16 أكتوبر: إجازة منتصف الفصل الدراسي للطلاب. لا توجد حصص دراسية وفقاً لتقويم الأكاديمية.',
+          reopen:'🎒 العودة إلى المدرسة: يُستأنف الجدول المعتاد من الاثنين إلى الجمعة يوم 19 أكتوبر. وتسري ترتيبات التربية البدنية والأنشطة يوم الخميس.',
+          decHoliday:'🇦🇪 من 2 إلى 4 ديسمبر: عطلة اليوم الوطني لدولة الإمارات (قيد التأكيد). لا توجد حصص مقررة، وتخضع التواريخ للتأكيد الرسمي.',
+          termEnd:'📘 الجمعة 11 ديسمبر: نهاية الفصل الدراسي الأول وآخر يوم دراسي قبل العطلة الشتوية.',
+          winter:'❄️ العطلة الشتوية للطلاب من 14 إلى 31 ديسمبر. لا توجد حصص، ويبدأ الفصل الثاني يوم 4 يناير 2027.',
+          winterFinal:'❄️ تستمر العطلة الشتوية حتى 31 ديسمبر. يظهر هذا الأسبوع جزئياً لأن الجدول ينتهي مع نهاية عام 2026.'
+        },
+        legendHeading:'📅 ملاحظات التقويم الدراسي ودليل الألوان',
+        legendIntro:'تستند التواريخ إلى التقويم الأكاديمي لأكاديمية رأس الخيمة 2026–2027، أما أوقات الحصص اليومية فمبنية على جدول الصف KG1D الذي تمت مشاركته سابقاً.',
+        publicLegend:'الأصفر · عطلة رسمية — المدرسة مغلقة؛ الموعد قيد التأكيد ويخضع للإعلان الرسمي',
+        winterLegend:'البرتقالي · عطلة نهاية الفصل الدراسي — لا توجد حصص للطلاب',
+        midtermLegend:'الرمادي · إجازة منتصف الفصل الدراسي — لا توجد حصص للطلاب',
+        termLegend:'الأخضر · يحدد بداية الفصل الدراسي أو نهايته في تقويم المدرسة',
+        calendarWarning:'⚠️ عطلة اليوم الوطني من 2 إلى 4 ديسمبر مذكورة على أنها قيد التأكيد. يُرجى الرجوع إلى التقويم الرسمي للأكاديمية أو إعلاناتها للتأكد من التواريخ النهائية. وقد تتغير مواعيد الأنشطة والانصراف بحسب الصف.',
+        time:{school:'7:30 AM – 2:25 PM',cca:'7:30 AM – 2:25 PM / 3:20 PM (CCA)',friday:'7:30 AM – 11:30 AM',termEnd:'7:30 AM – 11:30 AM',midterm:'المدرسة مغلقة',holiday:'المدرسة مغلقة (قيد التأكيد)',winter:'المدرسة مغلقة'},
+        detail:{school:'يوم دراسي كامل 🎒',cca:'الخميس: زي التربية البدنية والحذاء الرياضي · الانصراف المعتاد 2:25 مساءً · انصراف المشاركين في الأنشطة وإخوة طلاب KG1 الساعة 3:20 مساءً · يُرافق طلاب الحافلات إليها الساعة 3:10 مساءً 🎒',friday:'الدوام الدراسي يوم الجمعة ⭐',termEnd:'آخر يوم دراسي في الفصل الأول · وفق جدول يوم الجمعة ⭐',midterm:'إجازة منتصف الفصل الدراسي للطلاب — لا توجد حصص.',holiday:'عطلة اليوم الوطني لدولة الإمارات (قيد التأكيد) — لا توجد حصص وفق التقويم المنشور، ويخضع الموعد للتأكيد الرسمي.',winter:'العطلة الشتوية للفصل الأول — لا توجد حصص للطلاب.'},
+        badge:{school:'يوم كامل',cca:'رياضة / أنشطة',friday:'الجمعة',termEnd:'نهاية الفصل الأول',midterm:'إجازة منتصف الفصل',holiday:'عطلة · قيد التأكيد',winter:'العطلة الشتوية'}
+      },
+      it: {
+        locale:'it-IT',month:{october:'ottobre',november:'novembre',december:'dicembre'},
+        weekHeading:(m,n)=>`🗓️ ${m[0].toUpperCase()+m.slice(1)} · Programma settimana ${n}`,
+        notes:{
+          regular:'✅ Orario scolastico abituale dal lunedì al venerdì · Giovedì: kit di educazione fisica e scarpe da ginnastica; ritiro differenziato per le attività extrascolastiche.',
+          midterm:'🏫 12–16 ottobre: pausa di metà trimestre per gli alunni. Scuola chiusa secondo il calendario della RAK Academy.',
+          reopen:'🎒 Rientro a scuola: l’orario abituale dal lunedì al venerdì riprende il 19 ottobre. Il giovedì restano valide le disposizioni per educazione fisica e attività extrascolastiche.',
+          decHoliday:'🇦🇪 2–4 dicembre: festività nazionale degli Emirati Arabi Uniti (da confermare). Non sono previste lezioni; le date sono soggette a conferma ufficiale.',
+          termEnd:'📘 Venerdì 11 dicembre: termina il primo trimestre. È l’ultimo giorno di lezione prima della pausa invernale.',
+          winter:'❄️ Vacanze invernali per gli alunni dal 14 al 31 dicembre. Nessuna lezione; il secondo trimestre inizia il 4 gennaio 2027.',
+          winterFinal:'❄️ Le vacanze invernali continuano fino al 31 dicembre. Questa settimana è parziale perché il programma termina alla fine del 2026.'
+        },
+        legendHeading:'📅 Note sul calendario scolastico e legenda dei colori',
+        legendIntro:'Le date seguono il calendario accademico RAK Academy 2026–2027. Gli orari giornalieri riprendono il programma della classe KG1D già condiviso.',
+        publicLegend:'Giallo · Festività pubblica — scuola chiusa; da confermare in base alle comunicazioni ufficiali',
+        winterLegend:'Arancione · Vacanze di fine trimestre — nessuna lezione per gli alunni',
+        midtermLegend:'Grigio · Pausa di metà trimestre — nessuna lezione per gli alunni',
+        termLegend:'Verde · Indica l’inizio o la fine del trimestre nel calendario scolastico',
+        calendarWarning:'⚠️ Le festività del 2–4 dicembre sono indicate come da confermare. Consultare il calendario ufficiale della RAK Academy o le comunicazioni della scuola per le date definitive. Gli orari delle attività e del ritiro possono variare in base alla classe.',
+        time:{school:'7:30 – 14:25',cca:'7:30 – 14:25 / 15:20 (CCA)',friday:'7:30 – 11:30',termEnd:'7:30 – 11:30',midterm:'Scuola chiusa',holiday:'Scuola chiusa (da confermare)',winter:'Scuola chiusa'},
+        detail:{school:'Giornata scolastica completa 🎒',cca:'Giovedì: kit di educazione fisica e scarpe da ginnastica · Ritiro ordinario alle 14:25 · Ritiro per CCA e fratelli/sorelle di KG1 alle 15:20 · Alunni degli scuolabus accompagnati alle 15:10 🎒',friday:'Lezioni del venerdì ⭐',termEnd:'Ultimo giorno di lezione del primo trimestre · Orario del venerdì ⭐',midterm:'Pausa di metà trimestre per gli alunni — nessuna lezione.',holiday:'Festività nazionale degli Emirati Arabi Uniti (da confermare) — nessuna lezione secondo il calendario pubblicato, salvo conferma ufficiale.',winter:'Vacanze invernali del primo trimestre — nessuna lezione per gli alunni.'},
+        badge:{school:'Giornata intera',cca:'Educazione fisica / CCA',friday:'Venerdì',termEnd:'Fine primo trimestre',midterm:'Pausa di metà trimestre',holiday:'Festività · da confermare',winter:'Vacanze invernali'}
+      }
+    };
+    const uaeDate = s => new Date(s + 'T12:00:00+04:00');
+    const putText = (root,selector,value) => { const el=root.querySelector(selector); if(el && value != null)el.textContent=value; };
+    function translateCalendar(lang){
+      const t=translations[lang]||translations.en;
+      document.querySelectorAll('[data-calendar-text]').forEach(el=>{const key=el.dataset.calendarText;if(t[key])el.textContent=t[key];});
+      document.querySelectorAll('[data-cal-month]').forEach(el=>{
+        const m=t.month[el.dataset.calMonth];
+        putText(el,'.month-title', '📁 '+(lang==='it' ? m[0].toUpperCase()+m.slice(1) : m)+' 2026');
+      });
+      const longDay = new Intl.DateTimeFormat(t.locale,{weekday:'long',timeZone:'Asia/Dubai'});
+      const shortMonth = new Intl.DateTimeFormat(t.locale,{day:'numeric',month:'short',timeZone:'Asia/Dubai'});
+      const rangeMonth = new Intl.DateTimeFormat(t.locale,{month:'long',timeZone:'Asia/Dubai'});
+      document.querySelectorAll('.extended-week').forEach(week=>{
+        const start=uaeDate(week.dataset.start), end=uaeDate(week.dataset.finish);
+        const m=t.month[week.dataset.month];
+        putText(week,'.cal-week-heading',t.weekHeading(m,week.dataset.week));
+        const firstDay=new Intl.DateTimeFormat(t.locale,{day:'numeric',timeZone:'Asia/Dubai'}).format(start);
+        const lastDay=new Intl.DateTimeFormat(t.locale,{day:'numeric',timeZone:'Asia/Dubai'}).format(end);
+        const firstMonth=rangeMonth.format(start), lastMonth=rangeMonth.format(end);
+        const r=firstMonth===lastMonth ? firstDay+'–'+lastDay+' '+lastMonth+' 2026' : firstDay+' '+firstMonth+' – '+lastDay+' '+lastMonth+' 2026';
+        putText(week,'.cal-week-range',r);
+        putText(week,'.cal-week-note',t.notes[week.dataset.note]);
+        week.querySelectorAll('.extended-day').forEach(day=>{
+          const d=uaeDate(day.dataset.day),kind=day.dataset.kind;
+          putText(day,'.dow',longDay.format(d));
+          putText(day,'.date',shortMonth.format(d));
+          putText(day,'.cal-time',t.time[kind]);
+          putText(day,'.cal-detail',t.detail[kind]);
+          putText(day,'.cal-badge',t.badge[kind]);
+          const timeEl=day.querySelector('.cal-time');
+          if(timeEl)timeEl.dir=kind==='school'||kind==='cca'||kind==='friday'||kind==='termEnd' ? 'ltr':'auto';
+        });
+      });
+    }
+    window.updateExtendedCalendarLanguage=translateCalendar;
+  })();
+</script>
+
+<script>
+  (function () {
+    const translations = {
+      en: {
+        title: "RAK Academy Parents Corner | Schedule to December 2026",
         translationDisclaimer: "AI translation may not always be accurate — similar to Google Translate.",
         eyebrow: "📣 Parents' Friendly Corner",
         heroTitle: "Hi Moms &amp; Dads! 👋😊",
@@ -1554,7 +2212,7 @@
         whatsappLabel: "📱 Official WhatsApp / Contact Number",
         emailLabel: "✉️ Official Email Address",
         tinyNote: "For official school matters, confirmations, or anything requiring a formal response, please use the school’s official contact details above. 💜",
-        updateStamp: "🕒 Last updated: 30 September 2026 · 8:19 AM (UAE)",
+        updateStamp: "🕒 Last updated: 18 October 2026 (UAE)",
         faqHeading: "❓ Parent FAQs",
         faqIntro: "Tap a question to see the answer. 😊",
         resourcesHeading: "🔗 Helpful Links &amp; Learning Resources",
@@ -1615,7 +2273,7 @@
         footer: "Here’s to <strong>fewer missed reminders</strong>, more parent teamwork, and lots of happy kiddos! 😂💕🎒"
       },
       ar: {
-        title: "ركن أولياء أمور أكاديمية رأس الخيمة - الأسبوع الأول",
+        title: "ركن أولياء أمور أكاديمية رأس الخيمة | جدول حتى ديسمبر 2026",
         translationDisclaimer: "قد لا تكون الترجمة بالذكاء الاصطناعي دقيقة دائماً — كما هو الحال مع ترجمة Google.",
         eyebrow: "📣 الركن الودّي لأولياء الأمور",
         heroTitle: "مرحباً بالأمهات والآباء! 👋😊",
@@ -1630,7 +2288,7 @@
         whatsappLabel: "📱 واتساب / رقم التواصل الرسمي",
         emailLabel: "✉️ البريد الإلكتروني الرسمي",
         tinyNote: "للمسائل المدرسية الرسمية أو التأكيدات أو أي أمر يحتاج إلى رد رسمي، يرجى استخدام بيانات التواصل الرسمية للمدرسة أعلاه. 💜",
-        updateStamp: "🕒 آخر تحديث: 30 سبتمبر 2026 · 8:19 صباحاً (الإمارات)",
+        updateStamp: "🕒 آخر تحديث: 18 أكتوبر 2026 (الإمارات)",
         faqHeading: "❓ الأسئلة الشائعة لأولياء الأمور",
         faqIntro: "اضغطوا على أي سؤال لعرض الإجابة. 😊",
         resourcesHeading: "🔗 روابط مفيدة ومصادر تعليمية",
@@ -1691,7 +2349,7 @@
         footer: "نتمنى <strong>تذكيرات أقل تفويتاً</strong>، وتعاوناً أكبر بين أولياء الأمور، وأطفالاً سعداء دائماً! 😂💕🎒"
       },
       it: {
-        title: "Angolo Genitori RAK Academy - Settimana 1",
+        title: "Angolo Genitori RAK Academy | Programma fino a dicembre 2026",
         translationDisclaimer: "La traduzione tramite IA potrebbe non essere sempre accurata — come con Google Traduttore.",
         eyebrow: "📣 L'angolo amichevole dei genitori",
         heroTitle: "Ciao mamme e papà! 👋😊",
@@ -1706,7 +2364,7 @@
         whatsappLabel: "📱 WhatsApp / Numero di contatto ufficiale",
         emailLabel: "✉️ Indirizzo email ufficiale",
         tinyNote: "Per questioni scolastiche ufficiali, conferme o qualsiasi cosa richieda una risposta formale, utilizzate i contatti ufficiali della scuola indicati sopra. 💜",
-        updateStamp: "🕒 Ultimo aggiornamento: 30 settembre 2026 · 08:19 (EAU)",
+        updateStamp: "🕒 Ultimo aggiornamento: 18 ottobre 2026 (EAU)",
         faqHeading: "❓ Domande frequenti dei genitori",
         faqIntro: "Tocca una domanda per visualizzare la risposta. 😊",
         resourcesHeading: "🔗 Link utili e risorse didattiche",
@@ -1973,6 +2631,10 @@
           el.innerHTML = t[key];
         }
       });
+
+      if (typeof window.updateExtendedCalendarLanguage === 'function') {
+        window.updateExtendedCalendarLanguage(lang);
+      }
 
       const bannerEl = nodes.banner();
       if (bannerEl) bannerEl.textContent = libraryBannerText(lang);
